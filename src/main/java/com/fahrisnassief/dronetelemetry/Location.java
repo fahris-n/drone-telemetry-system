@@ -1,24 +1,27 @@
 package com.fahrisnassief.dronetelemetry;
 
+import jakarta.persistence.Embeddable;
+
+@Embeddable
 public class Location {
-    private Double lat;
-    private Double lon;
+    private Double latitude;
+    private Double longitude;
 
     public Location() {}
 
-    public Double getLon() {
-        return lon;
+    public Double getLongitude() {
+        return longitude;
     }
 
-    public void setLon(Double lon) {
-        this.lon = lon;
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 
-    public Double getLat() {
-        return lat;
+    public Double getLatitude() {
+        return latitude;
     }
 
-    public void setLat(Double lat) {
-        this.lat = lat;
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
     }
 }

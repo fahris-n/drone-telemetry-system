@@ -1,20 +1,27 @@
 package com.fahrisnassief.dronetelemetry;
 
-import java.time.Instant;
+import jakarta.persistence.*;
 
+@Entity
 public class DroneTelemetry {
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Embedded
     private Location location;
+
+    private String droneId;
     private Double altitude;
     private Double battery;
     private Double speed;
     private String status;
-    private Instant timestamp;
+    private String timestamp;
 
     public DroneTelemetry() {}
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String droneId) {
+        this.droneId = droneId;
     }
 
     public void setLocation(Location location) {
@@ -37,7 +44,39 @@ public class DroneTelemetry {
         this.status = status;
     }
 
-    public void setTimestamp(Instant timestamp) {
+    public Long getId() {
+        return id;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public String getDroneId() {
+        return droneId;
+    }
+
+    public Double getAltitude() {
+        return altitude;
+    }
+
+    public Double getBattery() {
+        return battery;
+    }
+
+    public Double getSpeed() {
+        return speed;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 }
