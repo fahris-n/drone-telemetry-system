@@ -1,4 +1,4 @@
-package com.fahrisnassief.dronetelemetry;
+package com.fahrisnassief.dronetelemetry.model;
 
 import jakarta.persistence.*;
 
