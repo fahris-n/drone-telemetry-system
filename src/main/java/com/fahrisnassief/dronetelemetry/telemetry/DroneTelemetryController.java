@@ -1,10 +1,9 @@
-package com.fahrisnassief.dronetelemetry;
+package com.fahrisnassief.dronetelemetry.telemetry;
 
-import org.springframework.http.HttpStatus;
+import com.fahrisnassief.dronetelemetry.model.DroneTelemetry;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("api/drone-telemetry")
@@ -23,10 +22,4 @@ public class DroneTelemetryController {
         droneTelemetryRepository.save(droneTelemetry);
         return ResponseEntity.ok().build();
     }
-
-    @GetMapping("/ids")
-    public List<DroneIdDTO> getAllDroneIds() {
-        return droneTelemetryService.getDistinctDrones();
-    }
-
 }

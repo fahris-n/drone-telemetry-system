@@ -40,11 +40,11 @@ class Drone:
 def main():
 
     fleet = [
-        Drone("RECON-GAZA-2025-003", 31.5017, 34.4668)     # Gaza, Palestine
-        # Drone("RECON-SCS-2025-007", 15.4881, 114.4048),     # South China Sea
-        # Drone("RECON-UKR-2025-012", 49.9859, 36.2735),      # Kharkiv, Ukraine
-        # Drone("RECON-SK-2025-009", 37.568295, 126.997785),  # Pannumjon, South Korea
-        # Drone("RECON-NP-2025-004", 68.67167, 2.000819)      # Norwegian Sea
+        Drone("RECON-GAZA-2025-003", 31.5017, 34.4668),     # Gaza, Palestine
+        Drone("RECON-SCS-2025-007", 15.4881, 114.4048),     # South China Sea
+        Drone("RECON-UKR-2025-012", 49.9859, 36.2735),      # Kharkiv, Ukraine
+        Drone("RECON-SK-2025-009", 37.568295, 126.997785),  # Pannumjon, South Korea
+        Drone("RECON-NP-2025-004", 68.67167, 2.000819),      # Norwegian Sea
     ]
 
     while True:
