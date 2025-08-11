@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.fahrisnassief</groupId>
-    <artifactId>drone-telemetry</artifactId>
+    <artifactId>backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>drone-telemetry-system</name>
     <description>drone-telemetry-system</description>

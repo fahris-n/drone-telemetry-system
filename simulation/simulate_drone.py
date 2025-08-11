@@ -36,7 +36,6 @@ class Drone:
         }
         return data
 
-
 def main():
 
     fleet = [
