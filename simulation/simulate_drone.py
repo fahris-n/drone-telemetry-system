@@ -46,11 +46,33 @@ def main():
         Drone("RECON-NP-2025-004", 68.67167, 2.000819),      # Norwegian Sea
     ]
 
+    # Attempt to connect to backend
+    max_attempts = 10
+    attempts = 0;
+    while attempts < max_attempts:
+        try:
+            response = requests.get("http://backend:8080/actuator/health")
+            if response.status_code == 200:
+                print("Backend is ready. Initiating telemetry data stream")
+                break;
+        except requests.exceptions.RequestException:
+            pass
+        attempts += 1
+        print(f"Backend not ready, retrying... ({attempts} /{max_attempts})")
+        time.sleep(2)
+    else:
+        print("Backend never became available for connection. Exiting")
+        exit(1)
+
+    # Start sending drone data
     while True:
         for drone in fleet:
             drone.update_self()
             telemetry = drone.generate_telemetry()
-            requests.post("http://localhost:8080/api/drone-telemetry", json=telemetry)
+            try:
+                requests.post("http://backend:8080/api/drone-telemetry", json=telemetry)
+            except requests.exceptions.RequestException as e:
+                print(f"Failed to post telemetry: {e}")
             print("Running...")
         time.sleep(1)
 

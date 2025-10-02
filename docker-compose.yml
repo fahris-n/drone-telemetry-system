@@ -1,4 +1,5 @@
 services:
+  # Postgres DB
   db:
     container_name: postgres-drone-telemetry-system
     image: postgres:latest
@@ -11,11 +12,79 @@ services:
     ports:
       - "5332:5432"
     networks:
-      - db
+      - app
     restart: unless-stopped
 
+#  # Zookeeper
+#  zookeeper:
+#    image: confluentinc/cp-zookeeper:latest
+#    container_name: zookeeper
+#    environment:
+#      ZOOKEEPER_CLIENT_PORT: 2181
+#      ZOOKEEPER_TICK_TIME: 2000
+#    ports:
+#      - "2181:2181"
+#    networks:
+#      - app
+
+#  # Kafka
+#  kafka:
+#    image: confluentic/cp-kafka:latest
+#    depends_on:
+#      - zookeeper
+#    ports:
+#      - "9029:9029"
+#      - "29092:29092"
+#    environment:
+#      KAFKA_BROKER_ID: 1
+#      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+#      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+#      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+#      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+#      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+#    networks:
+#      - app
+
+  # Python Sim
+  python-producer:
+    build:
+      context:
+        ./simulation
+    container_name: drone-data-producer
+    depends_on:
+      - backend
+    networks:
+      - app
+
+  # SpringBoot backend
+  backend:
+    build:
+      context:
+        ./backend
+    container_name: backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/telemetry_core
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - app
+
+#  # React frontend
+#  frontend:
+#    build:
+#      context:
+#        ./frontend
+#    container_name: frontend
+#    networks:
+#      - app
+
 networks:
-  db:
+  app:
     driver: bridge
+
 volumes:
   db:
