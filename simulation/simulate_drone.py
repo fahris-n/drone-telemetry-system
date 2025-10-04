@@ -50,7 +50,7 @@ def main():
     ]
 
     # Define bootstrap server and topic name for Kafka
-    BOOTSTRAP_SERVER = "kafka-broker:9092"
+    BOOTSTRAP_SERVER = "kafka-broker:29092"
     TOPIC_NAME = "drone-data"
 
     # Setup retry logic for attempting to connect to Kafka server
@@ -70,8 +70,9 @@ def main():
                 exit(1)
 
     # Send messages to topic
-    messages = 0
-    while messages < 15:
+    duration_seconds = 30
+    end_time = time.time() + duration_seconds
+    while time.time() < end_time:
         for drone in fleet:
             drone.update_self()
             telemetry = drone.generate_telemetry()
@@ -82,8 +83,6 @@ def main():
                 future.get(timeout=5)
             except Exception as e:
                 print(f"Error sending message: {e}")
-
-            messages += 1
         time.sleep(1)
 
     # Close the producer

@@ -20,7 +20,7 @@ public class DroneTelemetry {
 
     public DroneTelemetry() {}
 
-    public void setId(String droneId) {
+    public void setDroneId(String droneId) {
         this.droneId = droneId;
     }
 

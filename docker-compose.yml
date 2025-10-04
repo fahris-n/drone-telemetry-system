@@ -68,7 +68,7 @@ services:
     networks:
       - app
 
-#  # React frontend
+#  # React frontend. ** Will be added at a later point **
 #  frontend:
 #    build:
 #      context:
