@@ -32,10 +32,9 @@ Key planned components:
 - **AlertConsumer** → Real-time alerts feeding into Redis and the frontend.  
 - **Frontend (React + Vite)** → Interactive UI combining live tracking, dashboards, and analytics.  
 
-Planned system architecture:
-
-![Planned Architecture](architecture-v2.png)
-
+<p align="center">
+  <img src="docs/architecture-v2.png" alt="Planned Architecture" width="650">
+</p>
 
 ---
 
