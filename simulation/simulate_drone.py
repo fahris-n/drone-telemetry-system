@@ -1,7 +1,10 @@
+import json
 import time
 import random
-import requests
+from kafka import KafkaProducer
 from datetime import datetime, timezone
+
+from kafka.errors import NoBrokersAvailable
 
 
 class Drone:
@@ -46,36 +49,44 @@ def main():
         Drone("RECON-NP-2025-004", 68.67167, 2.000819),      # Norwegian Sea
     ]
 
-    # Attempt to connect to backend
-    max_attempts = 10
-    attempts = 0;
-    while attempts < max_attempts:
-        try:
-            response = requests.get("http://backend:8080/actuator/health")
-            if response.status_code == 200:
-                print("Backend is ready. Initiating telemetry data stream")
-                break;
-        except requests.exceptions.RequestException:
-            pass
-        attempts += 1
-        print(f"Backend not ready, retrying... ({attempts} /{max_attempts})")
-        time.sleep(2)
-    else:
-        print("Backend never became available for connection. Exiting")
-        exit(1)
+    # Define bootstrap server and topic name for Kafka
+    BOOTSTRAP_SERVER = "kafka-broker:29092"
+    TOPIC_NAME = "drone-data"
 
-    # Start sending drone data
-    while True:
+    # Setup retry logic for attempting to connect to Kafka server
+    attempt = 0
+    producer = None
+    maxRetries = 15
+    while attempt < maxRetries:
+        try:
+            producer = KafkaProducer(
+                bootstrap_servers = [BOOTSTRAP_SERVER],
+                value_serializer = lambda v: json.dumps(v).encode('utf-8')
+            )
+            break
+        except NoBrokersAvailable:
+            attempt += 1
+            if attempt == maxRetries:
+                exit(1)
+
+    # Send messages to topic
+    duration_seconds = 30
+    end_time = time.time() + duration_seconds
+    while time.time() < end_time:
         for drone in fleet:
             drone.update_self()
             telemetry = drone.generate_telemetry()
+            future = producer.send(TOPIC_NAME, value=telemetry)
+
+            # Checks if the message was sent correctly
             try:
-                requests.post("http://backend:8080/api/drone-telemetry", json=telemetry)
-            except requests.exceptions.RequestException as e:
-                print(f"Failed to post telemetry: {e}")
-            print("Running...")
+                future.get(timeout=5)
+            except Exception as e:
+                print(f"Error sending message: {e}")
         time.sleep(1)
 
+    # Close the producer
+    producer.flush()
 
 if __name__ == "__main__":
     main()
