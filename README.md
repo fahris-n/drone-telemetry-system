@@ -20,6 +20,13 @@ This project demonstrates event-driven architecture, containerized deployment, a
 - **Persistence**: A Spring Boot backend consumes messages from Kafka and stores telemetry data in Postgres for long-term historical storage.  
 - **Deployment**: All services run in Docker, communicating over the same Docker network.
 
+<p align="center">
+  <img src="docs/example_drone_telemetry.png" alt="Postgres Output" width="800">
+</p>
+<p align="center">
+  *Sample telemetry data stored in Postgres.*
+</p>
+
 ---
 
 ## 🛠️ Planned Architecture
