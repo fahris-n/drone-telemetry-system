@@ -67,6 +67,29 @@ Key planned components:
 
 ---
 
+# ✅ Deployment Automation (Achieved)
+
+The deployment pipeline is fully functional and automated.  
+This project is running on a remote **Ubuntu 24 ARM VM**, configured and deployed entirely via **Ansible**.
+
+The playbook handles all necessary setup, including:
+- Deep volume cleanup  
+- Correct secret injection  
+- Successful database initialization  
+
+
+## 📋 Deployment Verification Matrix
+
+| Component              | Status                                                                 | Verification                                                                 |
+|------------------------|------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| **VM Configuration**   | Ubuntu 24 ARM is running Docker and dependencies.                      | ✅ Confirmed                                                                  |
+| **Ansible Playbook**   | Successfully automates deployment and configuration.                   | ✅ Confirmed Operational                                                      |
+| **Postgres Initialization** | `telemetry_core` database is created, and all application tables are present. | ✅ Confirmed via `docker exec psql -U droneuser -d telemetry_core`            |
+| **Application Stack**  | All services (Python Producer, Kafka, Spring Boot Consumer, Postgres) are running and communicating. | ✅ Confirmed                                                                  |
+
+
+---
+
 ## 🎯 Purpose
 
 This project is being developed to:  
