@@ -18,7 +18,7 @@ This project demonstrates event-driven architecture, containerized deployment, a
 - **Simulation**: Python spawns and simulates multiple drone objects.  
 - **Streaming**: Each drone writes telemetry (location, altitude, speed, battery, etc.) to a Kafka topic every second.  
 - **Persistence**: A Spring Boot backend consumes messages from Kafka and stores telemetry data in Postgres for long-term historical storage.  
-- **Deployment**: All services run in Docker, communicating over the same Docker network.
+- **Deployment**: All services run in Docker containers, deployed on an Ubuntu VM with automated setup and configuration handled by Ansible.
 
 <p align="center">
   <img src="docs/example_drone_telemetry.png" alt="Postgres Output" width="800">
@@ -29,12 +29,24 @@ This project demonstrates event-driven architecture, containerized deployment, a
 
 ---
 
+
+## ⚙️ Tech Stack
+
+- **Python** – Drone simulation & Kafka producer  
+- **Apache Kafka** – Message broker for telemetry events  
+- **Spring Boot** – Backend consumer & API development  
+- **Postgres** – Historical data storage  
+- **Docker & Docker Compose** – Containerized deployment and networking
+- **VMware + Ubuntu 24 ARM** – Virtualized deployment environment
+- **Ansible** - Configuration and application deployment
+
+---
+
 ## 🛠️ Planned Architecture
 
 The long-term vision of this project expands beyond the current pipeline (Python → Kafka → Spring Boot → Postgres) into a full telemetry and analytics ecosystem.  
 
-Key planned components:  
-- **PostgresConsumer** → Persists telemetry for historical storage and analytics.  
+Key planned components:   
 - **Historical Analytics API** → Queryable endpoints for long-term data insights.  
 - **RedisConsumer + WebSocketManager** → Streams real-time drone locations to the frontend.  
 - **InfluxDBConsumer + Grafana** → Time-series dashboards per drone (speed, altitude, battery).  
@@ -44,26 +56,6 @@ Key planned components:
 <p align="center">
   <img src="docs/architecture-v2.png" alt="Planned Architecture" width="650">
 </p>
-
----
-
-## ⚙️ Tech Stack
-
-- **Python** – Drone simulation & Kafka producer  
-- **Apache Kafka** – Message broker for telemetry events  
-- **Spring Boot** – Backend consumer & API development  
-- **Postgres** – Historical data storage  
-- **Docker & Docker Compose** – Containerized deployment and networking  
-
----
-
-## 🚀 Planned Enhancements
-
-- **Analytics API** – Spring Boot endpoints to query historical telemetry data.  
-- **Frontend (React + Vite)** – Interactive UI for telemetry and analytics.  
-- **Real-Time Tracking** – Kafka → Redis consumer feeding a WebSocket manager to stream live drone locations on a map.  
-- **Grafana Dashboards** – InfluxDB consumer generating per-drone dashboards (speed, altitude, battery trends).  
-- **Automation & Deployment** – Setup an Ubuntu 24 ARM VM on VMware and automated its configuration and project deployment using an Ansible playbook.
 
 ---
 
@@ -102,7 +94,7 @@ This project is being developed to:
 
 ## 📌 Status
 
-🔧 **Active development** – Currently simulating drones, streaming via Kafka, and persisting to Postgres.  
-Shifting focus next to virtual machine deployment and Ansible automation, with analytics, frontend, and dashboards planned for later.  
+🔧 **Active development** – Currently simulating drones, streaming via Kafka, and persisting to Postgres.
+Deployment automation with Ubuntu VM + Ansible is complete. Focus is shifting to analytics, frontend, and dashboards.
 
 ---
