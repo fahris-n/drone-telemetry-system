@@ -1,10 +1,12 @@
 #  Drone Telemetry System
 
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-Backend-green)
-![Postgres](https://img.shields.io/badge/Postgres-Database-blueviolet)
-![Kafka](https://img.shields.io/badge/Kafka-Message%20Broker-orange)
-![Docker](https://img.shields.io/badge/Docker-Containerized-lightblue)
+**Backend & Database:**  
+![Python](https://img.shields.io/badge/Python-3.x-blue) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-Backend-green) ![Postgres](https://img.shields.io/badge/Postgres-Database-blueviolet) ![Kafka](https://img.shields.io/badge/Kafka-Message%20Broker-orange)  
+
+**Deployment & Infrastructure:**  
+![Docker](https://img.shields.io/badge/Docker-Containerized-lightblue) ![VMware](https://img.shields.io/badge/VMware-Virtualization-lightgrey) ![Ubuntu](https://img.shields.io/badge/Ubuntu-24%20ARM-orange) ![Ansible](https://img.shields.io/badge/Ansible-Automation-red)  
+
+
 
 A simulated drone telemetry platform that generates real-time drone data, streams it via Kafka, and stores it for historical analysis.  
 This project demonstrates event-driven architecture, containerized deployment, and integration across multiple backend technologies.
@@ -17,6 +19,13 @@ This project demonstrates event-driven architecture, containerized deployment, a
 - **Streaming**: Each drone writes telemetry (location, altitude, speed, battery, etc.) to a Kafka topic every second.  
 - **Persistence**: A Spring Boot backend consumes messages from Kafka and stores telemetry data in Postgres for long-term historical storage.  
 - **Deployment**: All services run in Docker, communicating over the same Docker network.
+
+<p align="center">
+  <img src="docs/example_drone_telemetry.png" alt="Postgres Output" width="800">
+</p>
+<p align="center">
+  *Sample telemetry data stored in Postgres.*
+</p>
 
 ---
 
@@ -54,7 +63,7 @@ Key planned components:
 - **Frontend (React + Vite)** – Interactive UI for telemetry and analytics.  
 - **Real-Time Tracking** – Kafka → Redis consumer feeding a WebSocket manager to stream live drone locations on a map.  
 - **Grafana Dashboards** – InfluxDB consumer generating per-drone dashboards (speed, altitude, battery trends).  
-- **Automation & Deployment** – VM setup with VirtualBox/Hyper-V + Ansible playbook for automated deployment of `docker-compose.yml`.  
+- **Automation & Deployment** – Setup an Ubuntu 24 ARM VM on VMware and automated its configuration and project deployment using an Ansible playbook.
 
 ---
 
