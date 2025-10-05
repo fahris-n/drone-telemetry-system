@@ -1,0 +1,88 @@
+# Ansible playbook (deploy script)
+---
+- name: Full Application Deployment to ubuntu24 ARM Server
+  hosts: app_servers
+  become: yes
+
+  vars:
+    git_repo_url: "https://github.com/fahris-n/drone-telemetry-system.git"
+    app_dir: "/home/{{ ansible_user }}/app_code"
+    db_user: "droneuser"
+    db_password: "T95t284MUkZO"
+    db_name: "telemetry_core"
+
+  tasks:
+    - name: 1. Ensure dependencies
+      ansible.builtin.apt:
+        name:
+          - python3
+          - curl
+          - apt-transport-https
+          - ca-certificates
+          - gnupg
+          - lsb-release
+        state: present
+        update_cache: yes
+
+    - name: 2. Add Docker GPG apt key
+      ansible.builtin.apt_key:
+        url: "https://download.docker.com/linux/ubuntu/gpg"
+        state: present
+
+    - name: 3. Add Docker repository for ARM64
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=arm64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+        state: present
+
+    - name: 4. Install Docker package
+      ansible.builtin.apt:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-buildx-plugin
+          - docker-compose-plugin
+        state: present
+        update_cache: yes
+
+    - name: 5. Configure Ansible user permissions for Docker
+      ansible.builtin.user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: yes
+
+    - name: 6. Tear down any existing Docker containers
+      community.docker.docker_compose_v2:
+        project_src: "{{ app_dir }}"
+        state: absent
+        remove_volumes: yes
+      ignore_errors: yes
+      become: no
+
+    - name: 7. Clone repository
+      ansible.builtin.git:
+        repo: "{{ git_repo_url }}"
+        dest: "{{ app_dir }}"
+        version: main
+        accept_hostkey: yes
+        force: yes
+      become: no
+
+    - name: 8. Create .env file with PostgreSQL secrets
+      ansible.builtin.copy:
+        content: |
+          POSTGRES_USER={{ db_user }}
+          POSTGRES_PASSWORD={{ db_password }}
+          POSTGRES_DB={{ db_name }}
+        dest: "{{ app_dir }}/.env"
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+        mode: '0600'
+      become: no
+
+    - name: 9. Build and run containers using docker-compose
+      community.docker.docker_compose_v2:
+        project_src: "{{ app_dir }}"
+        state: present
+        build: "always"
+      become: no
