@@ -70,23 +70,32 @@ def main():
                 exit(1)
 
     # Send messages to topic
-    duration_seconds = 30
+    duration_seconds = 60
     end_time = time.time() + duration_seconds
+    sent_count = 0
+    start_time = time.time()
+
     while time.time() < end_time:
         for drone in fleet:
             drone.update_self()
             telemetry = drone.generate_telemetry()
             future = producer.send(TOPIC_NAME, value=telemetry)
+            sent_count += 1
 
             # Checks if the message was sent correctly
             try:
                 future.get(timeout=5)
             except Exception as e:
                 print(f"Error sending message: {e}")
-        time.sleep(1)
+        # time.sleep(1)
 
     # Close the producer
     producer.flush()
+
+    # Get elapsed time
+    elapsed = end_time - start_time
+    print(f"Sent {sent_count} messages in {elapsed:.2f} seconds "
+          f"({sent_count / elapsed:.0f} msgs/sec)")
 
 if __name__ == "__main__":
     main()
