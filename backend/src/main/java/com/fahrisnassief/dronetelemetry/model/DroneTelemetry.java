@@ -2,6 +2,8 @@ package com.fahrisnassief.dronetelemetry.model;
 
 import jakarta.persistence.*;
 
+import java.time.Instant;
+
 @Entity
 public class DroneTelemetry {
     @Id
@@ -18,6 +20,14 @@ public class DroneTelemetry {
     private Double speed;
     private String status;
     private String timestamp;
+
+    @Column(name = "received_at")
+    private Instant receivedAt;
+
+    @PrePersist
+    protected void onCreate() {
+        receivedAt = Instant.now();
+    }
 
     public DroneTelemetry() {}
 
