@@ -1,0 +1,371 @@
+2025-12-09 01:25:15,540 [INFO] === MODULE LOADED ===
+2025-12-09 01:25:15,543 [INFO] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.3', 29092) IPv4]
+2025-12-09 01:25:15,543 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:25:15,543 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:25:15,544 [WARNING] No node available during check_version; sleeping 0.05 secs
+2025-12-09 01:25:15,593 [INFO] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.3', 29092) IPv4]
+2025-12-09 01:25:15,594 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:25:15,594 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:25:15,594 [WARNING] No node available during check_version; sleeping 0.11 secs
+2025-12-09 01:25:15,704 [INFO] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.3', 29092) IPv4]
+2025-12-09 01:25:15,705 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:25:15,705 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:25:15,706 [WARNING] No node available during check_version; sleeping 0.17 secs
+2025-12-09 01:25:15,881 [INFO] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.3', 29092) IPv4]
+2025-12-09 01:25:15,882 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:25:15,882 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:25:15,882 [WARNING] No node available during check_version; sleeping 0.42 secs
+2025-12-09 01:25:16,301 [INFO] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.3', 29092) IPv4]
+2025-12-09 01:25:16,301 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:25:16,301 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:25:16,302 [WARNING] No node available during check_version; sleeping 0.70 secs
+2025-12-09 01:25:17,000 [INFO] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.3', 29092) IPv4]
+2025-12-09 01:25:17,001 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:25:17,001 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:25:17,001 [WARNING] No node available during check_version; sleeping 0.54 secs
+2025-12-09 01:25:17,543 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.3', 29092) IPv4]
+2025-12-09 01:25:17,543 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:25:17,543 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:25:17,543 [WARNING] No node available during check_version; sleeping 0.05 secs
+2025-12-09 01:25:17,598 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.3', 29092) IPv4]
+2025-12-09 01:25:17,598 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:25:17,599 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:25:17,599 [WARNING] No node available during check_version; sleeping 0.09 secs
+2025-12-09 01:25:17,693 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.3', 29092) IPv4]
+2025-12-09 01:25:17,695 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:25:17,696 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:25:17,696 [WARNING] No node available during check_version; sleeping 0.22 secs
+2025-12-09 01:25:17,922 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.3', 29092) IPv4]
+2025-12-09 01:25:17,922 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:25:17,923 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:25:17,923 [WARNING] No node available during check_version; sleeping 0.44 secs
+2025-12-09 01:25:18,366 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.3', 29092) IPv4]
+2025-12-09 01:25:18,371 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <checking_api_versions_recv> [IPv4 ('172.19.0.3', 29092)]>: Broker version identified as 2.6
+2025-12-09 01:25:18,373 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connected> [IPv4 ('172.19.0.3', 29092)]>: Connection complete.
+2025-12-09 01:25:18,484 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=1 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.3', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.3', 29092) IPv4]
+2025-12-09 01:25:18,484 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=1 host=kafka-broker:29092 <connected> [IPv4 ('172.19.0.3', 29092)]>: Connection complete.
+2025-12-09 01:25:18,484 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connected> [IPv4 ('172.19.0.3', 29092)]>: Closing connection. 
+2025-12-09 01:25:18,495 [ERROR] Topic drone-data not found in cluster metadata
+2025-12-09 01:33:38,375 [INFO] Finished sending 964160 messages in 500.00s
+2025-12-09 01:33:38,376 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=1 host=kafka-broker:29092 <connected> [IPv4 ('172.19.0.3', 29092)]>: Closing connection. 
+2025-12-09 01:58:42,510 [INFO] === MODULE LOADED ===
+2025-12-09 01:58:42,515 [INFO] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.2', 29092) IPv4]
+2025-12-09 01:58:42,516 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:58:42,516 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:58:42,516 [WARNING] No node available during check_version; sleeping 0.04 secs
+2025-12-09 01:58:42,562 [INFO] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.2', 29092) IPv4]
+2025-12-09 01:58:42,562 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:58:42,562 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:58:42,562 [WARNING] No node available during check_version; sleeping 0.11 secs
+2025-12-09 01:58:42,678 [INFO] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.2', 29092) IPv4]
+2025-12-09 01:58:42,678 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:58:42,681 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:58:42,681 [WARNING] No node available during check_version; sleeping 0.22 secs
+2025-12-09 01:58:42,902 [INFO] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.2', 29092) IPv4]
+2025-12-09 01:58:42,902 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:58:42,903 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:58:42,903 [WARNING] No node available during check_version; sleeping 0.42 secs
+2025-12-09 01:58:43,326 [INFO] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.2', 29092) IPv4]
+2025-12-09 01:58:43,326 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:58:43,327 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:58:43,327 [WARNING] No node available during check_version; sleeping 0.74 secs
+2025-12-09 01:58:44,065 [INFO] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.2', 29092) IPv4]
+2025-12-09 01:58:44,066 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:58:44,066 [ERROR] <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:58:44,067 [WARNING] No node available during check_version; sleeping 0.45 secs
+2025-12-09 01:58:44,515 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.2', 29092) IPv4]
+2025-12-09 01:58:44,516 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:58:44,516 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:58:44,516 [WARNING] No node available during check_version; sleeping 0.05 secs
+2025-12-09 01:58:44,567 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.2', 29092) IPv4]
+2025-12-09 01:58:44,567 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:58:44,567 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:58:44,567 [WARNING] No node available during check_version; sleeping 0.09 secs
+2025-12-09 01:58:44,662 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.2', 29092) IPv4]
+2025-12-09 01:58:44,663 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:58:44,663 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:58:44,663 [WARNING] No node available during check_version; sleeping 0.21 secs
+2025-12-09 01:58:44,879 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.2', 29092) IPv4]
+2025-12-09 01:58:44,880 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:58:44,880 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:58:44,880 [WARNING] No node available during check_version; sleeping 0.33 secs
+2025-12-09 01:58:45,215 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.2', 29092) IPv4]
+2025-12-09 01:58:45,215 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Connect attempt returned error 111. Disconnecting.
+2025-12-09 01:58:45,215 [ERROR] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+2025-12-09 01:58:45,216 [WARNING] No node available during check_version; sleeping 0.65 secs
+2025-12-09 01:58:45,867 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.2', 29092) IPv4]
+2025-12-09 01:58:45,872 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <checking_api_versions_recv> [IPv4 ('172.19.0.2', 29092)]>: Broker version identified as 2.6
+2025-12-09 01:58:45,872 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connected> [IPv4 ('172.19.0.2', 29092)]>: Connection complete.
+2025-12-09 01:58:45,981 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=1 host=kafka-broker:29092 <connecting> [IPv4 ('172.19.0.2', 29092)]>: connecting to kafka-broker:29092 [('172.19.0.2', 29092) IPv4]
+2025-12-09 01:58:45,982 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=1 host=kafka-broker:29092 <connected> [IPv4 ('172.19.0.2', 29092)]>: Connection complete.
+2025-12-09 01:58:45,982 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka-broker:29092 <connected> [IPv4 ('172.19.0.2', 29092)]>: Closing connection. 
+2025-12-09 01:58:45,991 [ERROR] Topic drone-data not found in cluster metadata
+2025-12-09 01:58:47,245 [INFO] Sent 1000 messages in 1.37s (729 msgs/sec)
+2025-12-09 01:58:48,336 [INFO] Sent 2000 messages in 2.46s (812 msgs/sec)
+2025-12-09 01:58:49,069 [INFO] Sent 3000 messages in 3.20s (939 msgs/sec)
+2025-12-09 01:58:49,687 [INFO] Sent 4000 messages in 3.81s (1049 msgs/sec)
+2025-12-09 01:58:50,297 [INFO] Sent 5000 messages in 4.42s (1130 msgs/sec)
+2025-12-09 01:58:50,876 [INFO] Sent 6000 messages in 5.00s (1199 msgs/sec)
+2025-12-09 01:58:51,395 [INFO] Sent 7000 messages in 5.52s (1268 msgs/sec)
+2025-12-09 01:58:51,914 [INFO] Sent 8000 messages in 6.04s (1324 msgs/sec)
+2025-12-09 01:58:52,460 [INFO] Sent 9000 messages in 6.59s (1366 msgs/sec)
+2025-12-09 01:58:53,293 [INFO] Sent 10000 messages in 7.42s (1348 msgs/sec)
+2025-12-09 01:58:53,886 [INFO] Sent 11000 messages in 8.01s (1373 msgs/sec)
+2025-12-09 01:58:54,360 [INFO] Sent 12000 messages in 8.49s (1414 msgs/sec)
+2025-12-09 01:58:54,862 [INFO] Sent 13000 messages in 8.99s (1446 msgs/sec)
+2025-12-09 01:58:55,324 [INFO] Sent 14000 messages in 9.45s (1481 msgs/sec)
+2025-12-09 01:58:55,771 [INFO] Sent 15000 messages in 9.90s (1515 msgs/sec)
+2025-12-09 01:58:56,193 [INFO] Sent 16000 messages in 10.32s (1550 msgs/sec)
+2025-12-09 01:58:56,630 [INFO] Sent 17000 messages in 10.76s (1580 msgs/sec)
+2025-12-09 01:58:57,063 [INFO] Sent 18000 messages in 11.19s (1609 msgs/sec)
+2025-12-09 01:58:57,475 [INFO] Sent 19000 messages in 11.60s (1638 msgs/sec)
+2025-12-09 01:58:57,924 [INFO] Sent 20000 messages in 12.05s (1660 msgs/sec)
+2025-12-09 01:58:58,342 [INFO] Sent 21000 messages in 12.47s (1684 msgs/sec)
+2025-12-09 01:58:58,806 [INFO] Sent 22000 messages in 12.93s (1701 msgs/sec)
+2025-12-09 01:58:59,255 [INFO] Sent 23000 messages in 13.38s (1719 msgs/sec)
+2025-12-09 01:58:59,665 [INFO] Sent 24000 messages in 13.79s (1740 msgs/sec)
+2025-12-09 01:59:00,076 [INFO] Sent 25000 messages in 14.20s (1760 msgs/sec)
+2025-12-09 01:59:00,499 [INFO] Sent 26000 messages in 14.63s (1778 msgs/sec)
+2025-12-09 01:59:00,911 [INFO] Sent 27000 messages in 15.04s (1795 msgs/sec)
+2025-12-09 01:59:01,317 [INFO] Sent 28000 messages in 15.44s (1813 msgs/sec)
+2025-12-09 01:59:01,732 [INFO] Sent 29000 messages in 15.86s (1829 msgs/sec)
+2025-12-09 01:59:02,153 [INFO] Sent 30000 messages in 16.28s (1843 msgs/sec)
+2025-12-09 01:59:02,714 [INFO] Sent 31000 messages in 16.84s (1841 msgs/sec)
+2025-12-09 01:59:03,141 [INFO] Sent 32000 messages in 17.27s (1853 msgs/sec)
+2025-12-09 01:59:03,569 [INFO] Sent 33000 messages in 17.70s (1865 msgs/sec)
+2025-12-09 01:59:04,022 [INFO] Sent 34000 messages in 18.15s (1873 msgs/sec)
+2025-12-09 01:59:04,490 [INFO] Sent 35000 messages in 18.62s (1880 msgs/sec)
+2025-12-09 01:59:04,888 [INFO] Sent 36000 messages in 19.01s (1893 msgs/sec)
+2025-12-09 01:59:05,292 [INFO] Sent 37000 messages in 19.42s (1905 msgs/sec)
+2025-12-09 01:59:05,692 [INFO] Sent 38000 messages in 19.82s (1917 msgs/sec)
+2025-12-09 01:59:06,106 [INFO] Sent 39000 messages in 20.23s (1928 msgs/sec)
+2025-12-09 01:59:06,529 [INFO] Sent 40000 messages in 20.66s (1937 msgs/sec)
+2025-12-09 01:59:06,933 [INFO] Sent 41000 messages in 21.06s (1947 msgs/sec)
+2025-12-09 01:59:07,355 [INFO] Sent 42000 messages in 21.48s (1955 msgs/sec)
+2025-12-09 01:59:07,782 [INFO] Sent 43000 messages in 21.91s (1963 msgs/sec)
+2025-12-09 01:59:08,206 [INFO] Sent 44000 messages in 22.33s (1970 msgs/sec)
+2025-12-09 01:59:08,630 [INFO] Sent 45000 messages in 22.76s (1977 msgs/sec)
+2025-12-09 01:59:09,060 [INFO] Sent 46000 messages in 23.19s (1984 msgs/sec)
+2025-12-09 01:59:09,518 [INFO] Sent 47000 messages in 23.65s (1988 msgs/sec)
+2025-12-09 01:59:09,939 [INFO] Sent 48000 messages in 24.07s (1995 msgs/sec)
+2025-12-09 01:59:10,370 [INFO] Sent 49000 messages in 24.50s (2000 msgs/sec)
+2025-12-09 01:59:10,789 [INFO] Sent 50000 messages in 24.92s (2007 msgs/sec)
+2025-12-09 01:59:11,211 [INFO] Sent 51000 messages in 25.34s (2013 msgs/sec)
+2025-12-09 01:59:11,630 [INFO] Sent 52000 messages in 25.76s (2019 msgs/sec)
+2025-12-09 01:59:12,053 [INFO] Sent 53000 messages in 26.18s (2024 msgs/sec)
+2025-12-09 01:59:12,474 [INFO] Sent 54000 messages in 26.60s (2030 msgs/sec)
+2025-12-09 01:59:13,042 [INFO] Sent 55000 messages in 27.17s (2024 msgs/sec)
+2025-12-09 01:59:13,467 [INFO] Sent 56000 messages in 27.59s (2029 msgs/sec)
+2025-12-09 01:59:13,914 [INFO] Sent 57000 messages in 28.04s (2033 msgs/sec)
+2025-12-09 01:59:14,343 [INFO] Sent 58000 messages in 28.47s (2037 msgs/sec)
+2025-12-09 01:59:14,770 [INFO] Sent 59000 messages in 28.90s (2042 msgs/sec)
+2025-12-09 01:59:15,215 [INFO] Sent 60000 messages in 29.34s (2045 msgs/sec)
+2025-12-09 01:59:15,641 [INFO] Sent 61000 messages in 29.77s (2049 msgs/sec)
+2025-12-09 01:59:16,067 [INFO] Sent 62000 messages in 30.19s (2053 msgs/sec)
+2025-12-09 01:59:16,489 [INFO] Sent 63000 messages in 30.62s (2058 msgs/sec)
+2025-12-09 01:59:16,914 [INFO] Sent 64000 messages in 31.04s (2062 msgs/sec)
+2025-12-09 01:59:17,334 [INFO] Sent 65000 messages in 31.46s (2066 msgs/sec)
+2025-12-09 01:59:17,760 [INFO] Sent 66000 messages in 31.89s (2070 msgs/sec)
+2025-12-09 01:59:18,181 [INFO] Sent 67000 messages in 32.31s (2074 msgs/sec)
+2025-12-09 01:59:18,653 [INFO] Sent 68000 messages in 32.78s (2074 msgs/sec)
+2025-12-09 01:59:19,086 [INFO] Sent 69000 messages in 33.21s (2077 msgs/sec)
+2025-12-09 01:59:19,509 [INFO] Sent 70000 messages in 33.64s (2081 msgs/sec)
+2025-12-09 01:59:19,933 [INFO] Sent 71000 messages in 34.06s (2085 msgs/sec)
+2025-12-09 01:59:20,360 [INFO] Sent 72000 messages in 34.49s (2088 msgs/sec)
+2025-12-09 01:59:20,787 [INFO] Sent 73000 messages in 34.91s (2091 msgs/sec)
+2025-12-09 01:59:21,211 [INFO] Sent 74000 messages in 35.34s (2094 msgs/sec)
+2025-12-09 01:59:21,637 [INFO] Sent 75000 messages in 35.76s (2097 msgs/sec)
+2025-12-09 01:59:22,055 [INFO] Sent 76000 messages in 36.18s (2101 msgs/sec)
+2025-12-09 01:59:22,472 [INFO] Sent 77000 messages in 36.60s (2104 msgs/sec)
+2025-12-09 01:59:23,041 [INFO] Sent 78000 messages in 37.17s (2099 msgs/sec)
+2025-12-09 01:59:23,484 [INFO] Sent 79000 messages in 37.61s (2100 msgs/sec)
+2025-12-09 01:59:23,916 [INFO] Sent 80000 messages in 38.04s (2103 msgs/sec)
+2025-12-09 01:59:24,337 [INFO] Sent 81000 messages in 38.46s (2106 msgs/sec)
+2025-12-09 01:59:24,763 [INFO] Sent 82000 messages in 38.89s (2109 msgs/sec)
+2025-12-09 01:59:25,182 [INFO] Sent 83000 messages in 39.31s (2112 msgs/sec)
+2025-12-09 01:59:25,607 [INFO] Sent 84000 messages in 39.73s (2114 msgs/sec)
+2025-12-09 01:59:26,028 [INFO] Sent 85000 messages in 40.16s (2117 msgs/sec)
+2025-12-09 01:59:26,455 [INFO] Sent 86000 messages in 40.58s (2119 msgs/sec)
+2025-12-09 01:59:26,874 [INFO] Sent 87000 messages in 41.00s (2122 msgs/sec)
+2025-12-09 01:59:27,295 [INFO] Sent 88000 messages in 41.42s (2124 msgs/sec)
+2025-12-09 01:59:27,739 [INFO] Sent 89000 messages in 41.87s (2126 msgs/sec)
+2025-12-09 01:59:28,168 [INFO] Sent 90000 messages in 42.30s (2128 msgs/sec)
+2025-12-09 01:59:28,585 [INFO] Sent 91000 messages in 42.71s (2131 msgs/sec)
+2025-12-09 01:59:29,002 [INFO] Sent 92000 messages in 43.13s (2133 msgs/sec)
+2025-12-09 01:59:29,422 [INFO] Sent 93000 messages in 43.55s (2136 msgs/sec)
+2025-12-09 01:59:29,842 [INFO] Sent 94000 messages in 43.97s (2138 msgs/sec)
+2025-12-09 01:59:30,261 [INFO] Sent 95000 messages in 44.39s (2140 msgs/sec)
+2025-12-09 01:59:30,681 [INFO] Sent 96000 messages in 44.81s (2142 msgs/sec)
+2025-12-09 01:59:31,105 [INFO] Sent 97000 messages in 45.23s (2145 msgs/sec)
+2025-12-09 01:59:31,523 [INFO] Sent 98000 messages in 45.65s (2147 msgs/sec)
+2025-12-09 01:59:31,947 [INFO] Sent 99000 messages in 46.07s (2149 msgs/sec)
+2025-12-09 01:59:32,408 [INFO] Sent 100000 messages in 46.53s (2149 msgs/sec)
+2025-12-09 01:59:32,961 [INFO] Sent 101000 messages in 47.09s (2145 msgs/sec)
+2025-12-09 01:59:33,392 [INFO] Sent 102000 messages in 47.52s (2146 msgs/sec)
+2025-12-09 01:59:33,829 [INFO] Sent 103000 messages in 47.96s (2148 msgs/sec)
+2025-12-09 01:59:34,252 [INFO] Sent 104000 messages in 48.38s (2150 msgs/sec)
+2025-12-09 01:59:34,669 [INFO] Sent 105000 messages in 48.80s (2152 msgs/sec)
+2025-12-09 01:59:35,096 [INFO] Sent 106000 messages in 49.22s (2153 msgs/sec)
+2025-12-09 01:59:35,525 [INFO] Sent 107000 messages in 49.65s (2155 msgs/sec)
+2025-12-09 01:59:35,945 [INFO] Sent 108000 messages in 50.07s (2157 msgs/sec)
+2025-12-09 01:59:36,364 [INFO] Sent 109000 messages in 50.49s (2159 msgs/sec)
+2025-12-09 01:59:36,796 [INFO] Sent 110000 messages in 50.92s (2160 msgs/sec)
+2025-12-09 01:59:37,282 [INFO] Sent 111000 messages in 51.41s (2159 msgs/sec)
+2025-12-09 01:59:37,749 [INFO] Sent 112000 messages in 51.88s (2159 msgs/sec)
+2025-12-09 01:59:38,209 [INFO] Sent 113000 messages in 52.34s (2159 msgs/sec)
+2025-12-09 01:59:38,642 [INFO] Sent 114000 messages in 52.77s (2160 msgs/sec)
+2025-12-09 01:59:39,067 [INFO] Sent 115000 messages in 53.19s (2162 msgs/sec)
+2025-12-09 01:59:39,494 [INFO] Sent 116000 messages in 53.62s (2163 msgs/sec)
+2025-12-09 01:59:39,922 [INFO] Sent 117000 messages in 54.05s (2165 msgs/sec)
+2025-12-09 01:59:40,354 [INFO] Sent 118000 messages in 54.48s (2166 msgs/sec)
+2025-12-09 01:59:40,777 [INFO] Sent 119000 messages in 54.90s (2167 msgs/sec)
+2025-12-09 01:59:41,202 [INFO] Sent 120000 messages in 55.33s (2169 msgs/sec)
+2025-12-09 01:59:41,645 [INFO] Sent 121000 messages in 55.77s (2170 msgs/sec)
+2025-12-09 01:59:42,100 [INFO] Sent 122000 messages in 56.23s (2170 msgs/sec)
+2025-12-09 01:59:42,668 [INFO] Sent 123000 messages in 56.79s (2166 msgs/sec)
+2025-12-09 01:59:43,113 [INFO] Sent 124000 messages in 57.24s (2166 msgs/sec)
+2025-12-09 01:59:43,540 [INFO] Sent 125000 messages in 57.67s (2168 msgs/sec)
+2025-12-09 01:59:43,970 [INFO] Sent 126000 messages in 58.10s (2169 msgs/sec)
+2025-12-09 01:59:44,393 [INFO] Sent 127000 messages in 58.52s (2170 msgs/sec)
+2025-12-09 01:59:44,835 [INFO] Sent 128000 messages in 58.96s (2171 msgs/sec)
+2025-12-09 01:59:45,258 [INFO] Sent 129000 messages in 59.39s (2172 msgs/sec)
+2025-12-09 01:59:45,680 [INFO] Sent 130000 messages in 59.81s (2174 msgs/sec)
+2025-12-09 01:59:46,101 [INFO] Sent 131000 messages in 60.23s (2175 msgs/sec)
+2025-12-09 01:59:46,552 [INFO] Sent 132000 messages in 60.68s (2175 msgs/sec)
+2025-12-09 01:59:46,969 [INFO] Sent 133000 messages in 61.10s (2177 msgs/sec)
+2025-12-09 01:59:47,390 [INFO] Sent 134000 messages in 61.52s (2178 msgs/sec)
+2025-12-09 01:59:47,808 [INFO] Sent 135000 messages in 61.93s (2180 msgs/sec)
+2025-12-09 01:59:48,225 [INFO] Sent 136000 messages in 62.35s (2181 msgs/sec)
+2025-12-09 01:59:48,654 [INFO] Sent 137000 messages in 62.78s (2182 msgs/sec)
+2025-12-09 01:59:49,087 [INFO] Sent 138000 messages in 63.21s (2183 msgs/sec)
+2025-12-09 01:59:49,509 [INFO] Sent 139000 messages in 63.64s (2184 msgs/sec)
+2025-12-09 01:59:49,928 [INFO] Sent 140000 messages in 64.06s (2186 msgs/sec)
+2025-12-09 01:59:50,350 [INFO] Sent 141000 messages in 64.48s (2187 msgs/sec)
+2025-12-09 01:59:50,774 [INFO] Sent 142000 messages in 64.90s (2188 msgs/sec)
+2025-12-09 01:59:51,225 [INFO] Sent 143000 messages in 65.35s (2188 msgs/sec)
+2025-12-09 01:59:51,644 [INFO] Sent 144000 messages in 65.77s (2189 msgs/sec)
+2025-12-09 01:59:52,063 [INFO] Sent 145000 messages in 66.19s (2191 msgs/sec)
+2025-12-09 01:59:52,485 [INFO] Sent 146000 messages in 66.61s (2192 msgs/sec)
+2025-12-09 01:59:53,038 [INFO] Sent 147000 messages in 67.17s (2189 msgs/sec)
+2025-12-09 01:59:53,457 [INFO] Sent 148000 messages in 67.58s (2190 msgs/sec)
+2025-12-09 01:59:53,884 [INFO] Sent 149000 messages in 68.01s (2191 msgs/sec)
+2025-12-09 01:59:54,315 [INFO] Sent 150000 messages in 68.44s (2192 msgs/sec)
+2025-12-09 01:59:54,755 [INFO] Sent 151000 messages in 68.88s (2192 msgs/sec)
+2025-12-09 01:59:55,174 [INFO] Sent 152000 messages in 69.30s (2193 msgs/sec)
+2025-12-09 01:59:55,629 [INFO] Sent 153000 messages in 69.76s (2193 msgs/sec)
+2025-12-09 01:59:56,058 [INFO] Sent 154000 messages in 70.18s (2194 msgs/sec)
+2025-12-09 01:59:56,479 [INFO] Sent 155000 messages in 70.61s (2195 msgs/sec)
+2025-12-09 01:59:56,894 [INFO] Sent 156000 messages in 71.02s (2197 msgs/sec)
+2025-12-09 01:59:57,313 [INFO] Sent 157000 messages in 71.44s (2198 msgs/sec)
+2025-12-09 01:59:57,734 [INFO] Sent 158000 messages in 71.86s (2199 msgs/sec)
+2025-12-09 01:59:58,153 [INFO] Sent 159000 messages in 72.28s (2200 msgs/sec)
+2025-12-09 01:59:58,585 [INFO] Sent 160000 messages in 72.71s (2200 msgs/sec)
+2025-12-09 01:59:59,002 [INFO] Sent 161000 messages in 73.13s (2202 msgs/sec)
+2025-12-09 01:59:59,419 [INFO] Sent 162000 messages in 73.55s (2203 msgs/sec)
+2025-12-09 01:59:59,832 [INFO] Sent 163000 messages in 73.96s (2204 msgs/sec)
+2025-12-09 02:00:00,277 [INFO] Sent 164000 messages in 74.40s (2204 msgs/sec)
+2025-12-09 02:00:00,698 [INFO] Sent 165000 messages in 74.83s (2205 msgs/sec)
+2025-12-09 02:00:01,119 [INFO] Sent 166000 messages in 75.25s (2206 msgs/sec)
+2025-12-09 02:00:01,539 [INFO] Sent 167000 messages in 75.67s (2207 msgs/sec)
+2025-12-09 02:00:01,957 [INFO] Sent 168000 messages in 76.08s (2208 msgs/sec)
+2025-12-09 02:00:02,377 [INFO] Sent 169000 messages in 76.50s (2209 msgs/sec)
+2025-12-09 02:00:02,940 [INFO] Sent 170000 messages in 77.07s (2206 msgs/sec)
+2025-12-09 02:00:03,375 [INFO] Sent 171000 messages in 77.50s (2206 msgs/sec)
+2025-12-09 02:00:03,803 [INFO] Sent 172000 messages in 77.93s (2207 msgs/sec)
+2025-12-09 02:00:04,231 [INFO] Sent 173000 messages in 78.36s (2208 msgs/sec)
+2025-12-09 02:00:04,657 [INFO] Sent 174000 messages in 78.78s (2209 msgs/sec)
+2025-12-09 02:00:05,114 [INFO] Sent 175000 messages in 79.24s (2208 msgs/sec)
+2025-12-09 02:00:05,540 [INFO] Sent 176000 messages in 79.67s (2209 msgs/sec)
+2025-12-09 02:00:05,959 [INFO] Sent 177000 messages in 80.09s (2210 msgs/sec)
+2025-12-09 02:00:06,376 [INFO] Sent 178000 messages in 80.50s (2211 msgs/sec)
+2025-12-09 02:00:06,796 [INFO] Sent 179000 messages in 80.92s (2212 msgs/sec)
+2025-12-09 02:00:07,219 [INFO] Sent 180000 messages in 81.35s (2213 msgs/sec)
+2025-12-09 02:00:07,646 [INFO] Sent 181000 messages in 81.77s (2213 msgs/sec)
+2025-12-09 02:00:08,075 [INFO] Sent 182000 messages in 82.20s (2214 msgs/sec)
+2025-12-09 02:00:08,501 [INFO] Sent 183000 messages in 82.63s (2215 msgs/sec)
+2025-12-09 02:00:08,927 [INFO] Sent 184000 messages in 83.05s (2215 msgs/sec)
+2025-12-09 02:00:09,384 [INFO] Sent 185000 messages in 83.51s (2215 msgs/sec)
+2025-12-09 02:00:09,812 [INFO] Sent 186000 messages in 83.94s (2216 msgs/sec)
+2025-12-09 02:00:10,238 [INFO] Sent 187000 messages in 84.37s (2217 msgs/sec)
+2025-12-09 02:00:10,666 [INFO] Sent 188000 messages in 84.79s (2217 msgs/sec)
+2025-12-09 02:00:11,096 [INFO] Sent 189000 messages in 85.22s (2218 msgs/sec)
+2025-12-09 02:00:11,522 [INFO] Sent 190000 messages in 85.65s (2218 msgs/sec)
+2025-12-09 02:00:11,951 [INFO] Sent 191000 messages in 86.08s (2219 msgs/sec)
+2025-12-09 02:00:12,375 [INFO] Sent 192000 messages in 86.50s (2220 msgs/sec)
+2025-12-09 02:00:12,927 [INFO] Sent 193000 messages in 87.05s (2217 msgs/sec)
+2025-12-09 02:00:13,349 [INFO] Sent 194000 messages in 87.48s (2218 msgs/sec)
+2025-12-09 02:00:13,793 [INFO] Sent 195000 messages in 87.92s (2218 msgs/sec)
+2025-12-09 02:00:14,182 [INFO] Sent 196000 messages in 88.31s (2219 msgs/sec)
+2025-12-09 02:00:14,587 [INFO] Sent 197000 messages in 88.71s (2221 msgs/sec)
+2025-12-09 02:00:15,017 [INFO] Sent 198000 messages in 89.14s (2221 msgs/sec)
+2025-12-09 02:00:15,442 [INFO] Sent 199000 messages in 89.57s (2222 msgs/sec)
+2025-12-09 02:00:15,859 [INFO] Sent 200000 messages in 89.99s (2223 msgs/sec)
+2025-12-09 02:00:16,288 [INFO] Sent 201000 messages in 90.42s (2223 msgs/sec)
+2025-12-09 02:00:16,714 [INFO] Sent 202000 messages in 90.84s (2224 msgs/sec)
+2025-12-09 02:00:17,132 [INFO] Sent 203000 messages in 91.26s (2224 msgs/sec)
+2025-12-09 02:00:17,546 [INFO] Sent 204000 messages in 91.67s (2225 msgs/sec)
+2025-12-09 02:00:17,967 [INFO] Sent 205000 messages in 92.09s (2226 msgs/sec)
+2025-12-09 02:00:18,451 [INFO] Sent 206000 messages in 92.58s (2225 msgs/sec)
+2025-12-09 02:00:18,920 [INFO] Sent 207000 messages in 93.05s (2225 msgs/sec)
+2025-12-09 02:00:19,396 [INFO] Sent 208000 messages in 93.52s (2224 msgs/sec)
+2025-12-09 02:00:19,827 [INFO] Sent 209000 messages in 93.95s (2224 msgs/sec)
+2025-12-09 02:00:20,259 [INFO] Sent 210000 messages in 94.39s (2225 msgs/sec)
+2025-12-09 02:00:20,714 [INFO] Sent 211000 messages in 94.84s (2225 msgs/sec)
+2025-12-09 02:00:21,161 [INFO] Sent 212000 messages in 95.29s (2225 msgs/sec)
+2025-12-09 02:00:21,651 [INFO] Sent 213000 messages in 95.78s (2224 msgs/sec)
+2025-12-09 02:00:22,093 [INFO] Sent 214000 messages in 96.22s (2224 msgs/sec)
+2025-12-09 02:00:22,785 [INFO] Sent 215000 messages in 96.91s (2219 msgs/sec)
+2025-12-09 02:00:23,297 [INFO] Sent 216000 messages in 97.42s (2217 msgs/sec)
+2025-12-09 02:00:23,737 [INFO] Sent 217000 messages in 97.86s (2217 msgs/sec)
+2025-12-09 02:00:24,164 [INFO] Sent 218000 messages in 98.29s (2218 msgs/sec)
+2025-12-09 02:00:24,583 [INFO] Sent 219000 messages in 98.71s (2219 msgs/sec)
+2025-12-09 02:00:25,009 [INFO] Sent 220000 messages in 99.14s (2219 msgs/sec)
+2025-12-09 02:00:25,457 [INFO] Sent 221000 messages in 99.58s (2219 msgs/sec)
+2025-12-09 02:00:25,939 [INFO] Sent 222000 messages in 100.07s (2219 msgs/sec)
+2025-12-09 02:00:26,394 [INFO] Sent 223000 messages in 100.52s (2218 msgs/sec)
+2025-12-09 02:00:26,815 [INFO] Sent 224000 messages in 100.94s (2219 msgs/sec)
+2025-12-09 02:00:27,233 [INFO] Sent 225000 messages in 101.36s (2220 msgs/sec)
+2025-12-09 02:00:27,741 [INFO] Sent 226000 messages in 101.87s (2219 msgs/sec)
+2025-12-09 02:00:28,259 [INFO] Sent 227000 messages in 102.39s (2217 msgs/sec)
+2025-12-09 02:00:28,726 [INFO] Sent 228000 messages in 102.85s (2217 msgs/sec)
+2025-12-09 02:00:29,213 [INFO] Sent 229000 messages in 103.34s (2216 msgs/sec)
+2025-12-09 02:00:29,703 [INFO] Sent 230000 messages in 103.83s (2215 msgs/sec)
+2025-12-09 02:00:30,258 [INFO] Sent 231000 messages in 104.39s (2213 msgs/sec)
+2025-12-09 02:00:30,706 [INFO] Sent 232000 messages in 104.83s (2213 msgs/sec)
+2025-12-09 02:00:31,134 [INFO] Sent 233000 messages in 105.26s (2214 msgs/sec)
+2025-12-09 02:00:31,565 [INFO] Sent 234000 messages in 105.69s (2214 msgs/sec)
+2025-12-09 02:00:31,988 [INFO] Sent 235000 messages in 106.12s (2215 msgs/sec)
+2025-12-09 02:00:32,406 [INFO] Sent 236000 messages in 106.53s (2215 msgs/sec)
+2025-12-09 02:00:32,892 [INFO] Sent 237000 messages in 107.02s (2215 msgs/sec)
+2025-12-09 02:00:33,314 [INFO] Sent 238000 messages in 107.44s (2215 msgs/sec)
+2025-12-09 02:00:33,746 [INFO] Sent 239000 messages in 107.87s (2216 msgs/sec)
+2025-12-09 02:00:34,180 [INFO] Sent 240000 messages in 108.31s (2216 msgs/sec)
+2025-12-09 02:00:34,600 [INFO] Sent 241000 messages in 108.73s (2217 msgs/sec)
+2025-12-09 02:00:35,047 [INFO] Sent 242000 messages in 109.17s (2217 msgs/sec)
+2025-12-09 02:00:35,468 [INFO] Sent 243000 messages in 109.59s (2217 msgs/sec)
+2025-12-09 02:00:35,888 [INFO] Sent 244000 messages in 110.01s (2218 msgs/sec)
+2025-12-09 02:00:36,305 [INFO] Sent 245000 messages in 110.43s (2219 msgs/sec)
+2025-12-09 02:00:36,728 [INFO] Sent 246000 messages in 110.85s (2219 msgs/sec)
+2025-12-09 02:00:37,165 [INFO] Sent 247000 messages in 111.29s (2219 msgs/sec)
+2025-12-09 02:00:37,625 [INFO] Sent 248000 messages in 111.75s (2219 msgs/sec)
+2025-12-09 02:00:38,045 [INFO] Sent 249000 messages in 112.17s (2220 msgs/sec)
+2025-12-09 02:00:38,464 [INFO] Sent 250000 messages in 112.59s (2220 msgs/sec)
+2025-12-09 02:00:38,883 [INFO] Sent 251000 messages in 113.01s (2221 msgs/sec)
+2025-12-09 02:00:39,301 [INFO] Sent 252000 messages in 113.43s (2222 msgs/sec)
+2025-12-09 02:00:39,716 [INFO] Sent 253000 messages in 113.84s (2222 msgs/sec)
+2025-12-09 02:00:40,227 [INFO] Sent 254000 messages in 114.35s (2221 msgs/sec)
+2025-12-09 02:00:40,649 [INFO] Sent 255000 messages in 114.78s (2222 msgs/sec)
+2025-12-09 02:00:41,065 [INFO] Sent 256000 messages in 115.19s (2222 msgs/sec)
+2025-12-09 02:00:41,482 [INFO] Sent 257000 messages in 115.61s (2223 msgs/sec)
+2025-12-09 02:00:41,933 [INFO] Sent 258000 messages in 116.06s (2223 msgs/sec)
+2025-12-09 02:00:42,369 [INFO] Sent 259000 messages in 116.50s (2223 msgs/sec)
+2025-12-09 02:00:42,858 [INFO] Sent 260000 messages in 116.98s (2223 msgs/sec)
+2025-12-09 02:00:43,277 [INFO] Sent 261000 messages in 117.40s (2223 msgs/sec)
+2025-12-09 02:00:43,697 [INFO] Sent 262000 messages in 117.82s (2224 msgs/sec)
+2025-12-09 02:00:44,126 [INFO] Sent 263000 messages in 118.25s (2224 msgs/sec)
+2025-12-09 02:00:44,547 [INFO] Sent 264000 messages in 118.67s (2225 msgs/sec)
+2025-12-09 02:00:44,965 [INFO] Sent 265000 messages in 119.09s (2225 msgs/sec)
+2025-12-09 02:00:45,384 [INFO] Sent 266000 messages in 119.51s (2226 msgs/sec)
+2025-12-09 02:00:45,802 [INFO] Sent 267000 messages in 119.93s (2226 msgs/sec)
+2025-12-09 02:00:45,873 [INFO] Finished sending 267170 messages in 120.00s
+2025-12-09 02:00:45,874 [INFO] <BrokerConnection client_id=kafka-python-producer-2, node_id=1 host=kafka-broker:29092 <connected> [IPv4 ('172.19.0.2', 29092)]>: Closing connection. 

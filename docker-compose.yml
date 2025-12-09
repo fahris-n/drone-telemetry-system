@@ -48,7 +48,7 @@ services:
         ./simulation
     container_name: drone-data-producer
     volumes:
-      - ./logs:/app.logs
+      - /Users/fahrisnassief/dev/drone-telemetry-system/logs:/app/logs
     depends_on:
       - kafka
     networks:

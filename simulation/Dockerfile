@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the simulation script into the container
 COPY simulate_drone.py .
 
+# Create logs directory
+RUN mkdir -p /app/logs
+
 # Install any dependencies (if you have a requirements.txt, otherwise skip this)
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt

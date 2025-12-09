@@ -5,7 +5,8 @@ import jakarta.persistence.*;
 @Entity
 public class DroneTelemetry {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "telemetry_seq")
+    @SequenceGenerator(name = "telemetry_seq", sequenceName = "telemetry_seq", allocationSize = 500)
     private Long id;
 
     @Embedded
