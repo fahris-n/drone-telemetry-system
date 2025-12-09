@@ -47,6 +47,8 @@ services:
       context:
         ./simulation
     container_name: drone-data-producer
+    volumes:
+      - ./logs:/app.logs
     depends_on:
       - kafka
     networks:

@@ -1,8 +1,16 @@
 import json
 import time
 import random
+import logging
 from kafka import KafkaProducer
 from datetime import datetime, timezone
+
+# Configure logging
+logging.basicConfig(
+    filename='/app/logs/producer.log',
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s'
+)
 
 from kafka.errors import NoBrokersAvailable
 
@@ -82,6 +90,11 @@ def main():
             future = producer.send(TOPIC_NAME, value=telemetry)
             sent_count += 1
 
+            if sent_count % 1000 == 0:
+                elapsed = time.time() - start_time
+            logging.info(f"Sent {sent_count} messages in {elapsed:.2f}s ({sent_count/elapsed:.0f} msgs/sec)")
+
+
             # Checks if the message was sent correctly
             try:
                 future.get(timeout=5)
@@ -91,11 +104,10 @@ def main():
 
     # Close the producer
     producer.flush()
+    logging.info(f"Finished sending {sent_count} messages in {time.time() - start_time:.2f}s")
 
     # Get elapsed time
     elapsed = end_time - start_time
-    print(f"Sent {sent_count} messages in {elapsed:.2f} seconds "
-          f"({sent_count / elapsed:.0f} msgs/sec)")
 
 if __name__ == "__main__":
     main()
