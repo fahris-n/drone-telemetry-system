@@ -2,10 +2,13 @@ package com.fahrisnassief.dronetelemetry.model;
 
 import jakarta.persistence.*;
 
+import java.time.Instant;
+
 @Entity
 public class DroneTelemetry {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "telemetry_seq")
+    @SequenceGenerator(name = "telemetry_seq", sequenceName = "telemetry_seq", allocationSize = 500)
     private Long id;
 
     @Embedded
@@ -17,6 +20,14 @@ public class DroneTelemetry {
     private Double speed;
     private String status;
     private String timestamp;
+
+    @Column(name = "received_at")
+    private Instant receivedAt;
+
+    @PrePersist
+    protected void onCreate() {
+        receivedAt = Instant.now();
+    }
 
     public DroneTelemetry() {}
 

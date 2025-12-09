@@ -5,6 +5,8 @@ import com.fahrisnassief.dronetelemetry.repository.DroneTelemetryRepository;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DroneTelemetryConsumer {
     private final DroneTelemetryRepository droneTelemetryRepository;
@@ -18,8 +20,7 @@ public class DroneTelemetryConsumer {
             groupId = "postgres-reader",
             containerFactory = "postgresListenerContainerFactory"
     )
-    public void consume(DroneTelemetry droneTelemetry) {
-        droneTelemetryRepository.save(droneTelemetry);
-        System.out.println("Drone Telemetry Received" + droneTelemetry);
+    public void consume(List<DroneTelemetry> droneTelemetryBatch) {
+        droneTelemetryRepository.saveAll(droneTelemetryBatch);
     }
 }

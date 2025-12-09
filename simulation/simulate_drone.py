@@ -1,8 +1,18 @@
 import json
 import time
 import random
+import logging
 from kafka import KafkaProducer
 from datetime import datetime, timezone
+
+# Configure logging
+logging.basicConfig(
+    filename='/app/logs/producer.log',
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s'
+)
+
+logging.info("=== MODULE LOADED ===")
 
 from kafka.errors import NoBrokersAvailable
 
@@ -70,20 +80,30 @@ def main():
                 exit(1)
 
     # Send messages to topic
-    duration_seconds = 30
+    duration_seconds = 120
     end_time = time.time() + duration_seconds
+    sent_count = 0
+    start_time = time.time()
+
     while time.time() < end_time:
         for drone in fleet:
             drone.update_self()
             telemetry = drone.generate_telemetry()
             future = producer.send(TOPIC_NAME, value=telemetry)
+            sent_count += 1
+
+            if sent_count % 1000 == 0:
+                elapsed = time.time() - start_time
+                logging.info(f"Sent {sent_count} messages in {elapsed:.2f}s ({sent_count/elapsed:.0f} msgs/sec)")
+
 
             # Checks if the message was sent correctly
             try:
                 future.get(timeout=5)
             except Exception as e:
                 print(f"Error sending message: {e}")
-        time.sleep(1)
+
+    logging.info(f"Finished sending {sent_count} messages in {time.time() - start_time:.2f}s")
 
     # Close the producer
     producer.flush()

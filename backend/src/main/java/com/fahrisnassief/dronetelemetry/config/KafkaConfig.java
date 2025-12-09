@@ -25,6 +25,7 @@ public class KafkaConfig {
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "postgres-consumer");
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
+        props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 500);
         props.put(JsonDeserializer.TRUSTED_PACKAGES, "com.fahrisnassief.dronetelemetry.model");
 
         return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), new JsonDeserializer<>(DroneTelemetry.class));
@@ -34,6 +35,8 @@ public class KafkaConfig {
     public ConcurrentKafkaListenerContainerFactory<String, DroneTelemetry> postgresListenerContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, DroneTelemetry> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(postgresConsumerFactory());
+        factory.setBatchListener(true);
+        factory.setConcurrency(6);
 
         // Retry logic. Specifically if topic hasn't been created yet
         FixedBackOff backOff = new FixedBackOff(5000L, 10L);
