@@ -2,7 +2,7 @@ services:
   # Postgres DB
   db:
     container_name: postgres-drone-telemetry-system
-    image: postgres:latest
+    image: postgres:17
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
