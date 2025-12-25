@@ -1,30 +1,20 @@
 #  Drone Telemetry System
 
-**Backend & Database:**  
-![Python](https://img.shields.io/badge/Python-3.x-blue) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-Backend-green) ![Postgres](https://img.shields.io/badge/Postgres-Database-blueviolet) ![Kafka](https://img.shields.io/badge/Kafka-Message%20Broker-orange)  
-
-**Deployment & Infrastructure:**  
-![Docker](https://img.shields.io/badge/Docker-Containerized-lightblue) ![VMware](https://img.shields.io/badge/VMware-Virtualization-lightgrey) ![Ubuntu](https://img.shields.io/badge/Ubuntu-24%20ARM-orange) ![Ansible](https://img.shields.io/badge/Ansible-Automation-red)  
-
-
-
-A simulated drone telemetry platform that generates real-time drone data, streams it via Kafka, and stores it for historical analysis.  
-This project demonstrates event-driven architecture, containerized deployment, and integration across multiple backend technologies.
+A real-time distributed system that ingests drone telemetry data via Kafka, persists to PostgreSQL, and streams live updates to a React dashboard over WebSockets.
 
 ---
 
 ## 📖 Overview
 
-- **Simulation**: Python spawns and simulates multiple drone objects.  
-- **Streaming**: Each drone writes telemetry (location, altitude, speed, battery, etc.) to a Kafka topic every second.  
-- **Persistence**: A Spring Boot backend consumes messages from Kafka and stores telemetry data in Postgres for long-term historical storage.  
-- **Deployment**: All services run in Docker containers, deployed on an Ubuntu VM with automated setup and configuration handled by Ansible.
+- **Simulation**: Python spawns and simulates multiple drone objects
+- **Streaming**: Each drone writes telemetry (location, altitude, speed, battery, etc.) to a Kafka topic
+- **Persistence**: Spring Boot consumes from Kafka and stores telemetry in PostgreSQL
+- **Real-time**: WebSocket broadcasting pushes live updates to connected clients
+- **Frontend**: React dashboard displays real-time telemetry and historical data via REST
+- **Deployment**: All services run in Docker containers
 
 <p align="center">
-  <img src="docs/example_drone_telemetry.png" alt="Postgres Output" width="800">
-</p>
-<p align="center">
-  *Sample telemetry data stored in Postgres.*
+  <img src="docs/architecture.jpeg" alt="System Diagram" width="1200">
 </p>
 
 ---
@@ -32,69 +22,30 @@ This project demonstrates event-driven architecture, containerized deployment, a
 
 ## ⚙️ Tech Stack
 
-- **Python** – Drone simulation & Kafka producer  
-- **Apache Kafka** – Message broker for telemetry events  
-- **Spring Boot** – Backend consumer & API development  
-- **Postgres** – Historical data storage  
-- **Docker & Docker Compose** – Containerized deployment and networking
-- **VMware + Ubuntu 24 ARM** – Virtualized deployment environment
-- **Ansible** - Configuration and application deployment
+- `Python`
+- `Java`
+- `Apache Kafka`
+- `Spring Boot`
+- `PostgreSQL`
+- `React`
+- `TypeScript`
+- `WebSocket (STOMP)`
+- `Docker`
+
 
 ---
 
-## 🛠️ Planned Architecture
+## 📊 Performance
 
-The long-term vision of this project expands beyond the current pipeline (Python → Kafka → Spring Boot → Postgres) into a full telemetry and analytics ecosystem.  
-
-Key planned components:   
-- **Historical Analytics API** → Queryable endpoints for long-term data insights.  
-- **RedisConsumer + WebSocketManager** → Streams real-time drone locations to the frontend.  
-- **InfluxDBConsumer + Grafana** → Time-series dashboards per drone (speed, altitude, battery).  
-- **AlertConsumer** → Real-time alerts feeding into Redis and the frontend.  
-- **Frontend (React + Vite)** → Interactive UI combining live tracking, dashboards, and analytics.  
-
-<p align="center">
-  <img src="docs/architecture-v2.png" alt="Planned Architecture" width="650">
-</p>
-
----
-
-# ✅ Deployment Automation (Achieved)
-
-The deployment pipeline is fully functional and automated.  
-This project is running on a remote **Ubuntu 24 ARM VM**, configured and deployed entirely via **Ansible**.
-
-The playbook handles all necessary setup, including:
-- Deep volume cleanup  
-- Correct secret injection  
-- Successful database initialization  
-
-
-## 📋 Deployment Verification Matrix
-
-| Component              | Status                                                                 | Verification                                                                 |
-|------------------------|------------------------------------------------------------------------|-------------------------------------------------------------------------------|
-| **VM Configuration**   | Ubuntu 24 ARM is running Docker and dependencies.                      | ✅ Confirmed                                                                  |
-| **Ansible Playbook**   | Successfully automates deployment and configuration.                   | ✅ Confirmed Operational                                                      |
-| **Postgres Initialization** | `telemetry_core` database is created, and all application tables are present. | ✅ Confirmed via `docker exec psql -U droneuser -d telemetry_core`            |
-| **Application Stack**  | All services (Python Producer, Kafka, Spring Boot Consumer, Postgres) are running and communicating. | ✅ Confirmed                                                                  |
-
+- **2,700+** messages/second throughput
+- **11ms** average latency
+- **5** containerized services
 
 ---
 
 ## 🎯 Purpose
 
-This project is being developed to:  
-- Explore event-driven microservices architecture and real-time telemetry streaming.  
-- Gain practical experience with containerization and service orchestration using Docker and Docker Compose.  
-- Demonstrate deployment automation and systems integration through the use of virtual machines and Ansible.  
-- Create a comprehensive project that highlights both software engineering and infrastructure skills in a real-world context.   
+- Explore event-driven architecture and real-time data streaming
+- Gain hands-on experience with containerization and service orchestration
+- Build a full-stack distributed system from simulation to visualization
 
----
-
-## 📌 Status
-
-🔧 **Active development** – Currently simulating drones, streaming via Kafka, and persisting to Postgres.
-Deployment automation with Ubuntu VM + Ansible is complete. Focus is shifting to analytics, frontend, and dashboards.
-
----
