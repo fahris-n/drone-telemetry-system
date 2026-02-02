@@ -1,140 +1,3 @@
-/*:root {*/
-/*  --bg-primary: #0a0f0a;*/
-/*  --bg-secondary: #0d140d;*/
-/*  --border-color: #1a2e1a;*/
-/*  --text-primary: #c8e6c8;*/
-/*  --text-secondary: #6b8f6b;*/
-/*  --text-dim: #3d5a3d;*/
-/*  --accent-green: #00ff66;*/
-/*  --accent-yellow: #ffaa00;*/
-/*  --accent-orange: #ff6600;*/
-/*}*/
-
-/** {*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*  box-sizing: border-box;*/
-/*}*/
-
-/*html, body, #root {*/
-/*  height: 100%;*/
-/*  width: 100%;*/
-/*}*/
-
-/*body {*/
-/*  margin: 0;*/
-/*  background: var(--bg-primary);*/
-/*  font-family: 'Rajdhani', sans-serif;*/
-/*}*/
-
-/*!* Header *!*/
-/*.header {*/
-/*  display: flex;*/
-/*  justify-content: space-between;*/
-/*  align-items: center;*/
-/*  padding: 16px 24px;*/
-/*  background: var(--bg-secondary);*/
-/*  border-bottom: 1px solid var(--border-color);*/
-/*  position: relative;*/
-/*}*/
-
-/*.header::after {*/
-/*  content: '';*/
-/*  position: absolute;*/
-/*  bottom: -1px;*/
-/*  left: 0;*/
-/*  right: 0;*/
-/*  height: 1px;*/
-/*  background: linear-gradient(90deg, transparent, var(--accent-green), transparent);*/
-/*  opacity: 0.3;*/
-/*}*/
-
-/*.header-left {*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  gap: 16px;*/
-/*}*/
-
-/*.logo {*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  gap: 12px;*/
-/*}*/
-
-/*.logo-icon {*/
-/*  width: 36px;*/
-/*  height: 36px;*/
-/*  border: 2px solid var(--accent-green);*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  justify-content: center;*/
-/*  color: var(--accent-green);*/
-/*  font-size: 18px;*/
-/*}*/
-
-/*.logo-text {*/
-/*  font-family: 'Share Tech Mono', monospace;*/
-/*  font-size: 1.25rem;*/
-/*  letter-spacing: 2px;*/
-/*  color: var(--text-primary);*/
-/*}*/
-
-/*.logo-text span {*/
-/*  color: var(--accent-green);*/
-/*}*/
-
-/*.classification {*/
-/*  font-family: 'Share Tech Mono', monospace;*/
-/*  font-size: 0.7rem;*/
-/*  color: var(--text-dim);*/
-/*  letter-spacing: 3px;*/
-/*  padding: 4px 12px;*/
-/*  border: 1px solid var(--border-color);*/
-/*}*/
-
-/*.header-right {*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  gap: 24px;*/
-/*}*/
-
-/*.datetime {*/
-/*  font-family: 'Share Tech Mono', monospace;*/
-/*  font-size: 0.85rem;*/
-/*  color: var(--text-secondary);*/
-/*}*/
-
-/*.status-indicator {*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  gap: 8px;*/
-/*  font-family: 'Share Tech Mono', monospace;*/
-/*  font-size: 0.85rem;*/
-/*  color: var(--text-primary);*/
-/*}*/
-
-/*.status-dot {*/
-/*  width: 8px;*/
-/*  height: 8px;*/
-/*  border-radius: 50%;*/
-/*}*/
-
-/*.status-dot.connected {*/
-/*  background: var(--accent-green);*/
-/*  box-shadow: 0 0 10px var(--accent-green);*/
-/*  animation: pulse 2s infinite;*/
-/*}*/
-
-/*.status-dot.disconnected {*/
-/*  background: #ff3344;*/
-/*  box-shadow: 0 0 10px #ff3344;*/
-/*}*/
-
-/*@keyframes pulse {*/
-/*  0%, 100% { opacity: 1; }*/
-/*  50% { opacity: 0.5; }*/
-/*}*/
-
 :root {
   --bg-primary: #0a0f0a;
   --bg-secondary: #0d140d;
@@ -276,7 +139,7 @@ body {
 .dashboard-container {
   display: grid;
   grid-template-columns: 1fr 380px;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 0.7fr 1fr auto;
   gap: 16px;
   padding: 16px;
   height: calc(100vh - 70px);
@@ -303,7 +166,7 @@ body {
   color: var(--text-secondary);
 }
 
-/* Map Section */
+/* DroneMap Section */
 .map-panel {
   grid-column: 1;
   grid-row: 1 / 3;
@@ -315,7 +178,6 @@ body {
 }
 
 .map-panel::before {
-  content: '//';
   position: absolute;
   top: 12px;
   left: -8px;
@@ -367,7 +229,6 @@ body {
 }
 
 .live-feed-panel::before {
-  content: '//';
   position: absolute;
   top: 12px;
   left: -8px;
@@ -386,7 +247,7 @@ body {
 /* Drone Selector */
 .drone-selector-panel {
   grid-column: 2;
-  grid-row: 1 / 3;
+  grid-row: 1;
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   display: flex;
@@ -395,7 +256,6 @@ body {
 }
 
 .drone-selector-panel::before {
-  content: '//';
   position: absolute;
   top: 12px;
   right: calc(100% + 4px);
@@ -465,7 +325,7 @@ body {
 /* Telemetry Panel */
 .telemetry-panel {
   grid-column: 2;
-  grid-row: 3;
+  grid-row: 2 / -1;
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   display: flex;
@@ -474,7 +334,6 @@ body {
 }
 
 .telemetry-panel::before {
-  content: '//';
   position: absolute;
   top: 12px;
   right: calc(100% + 4px);
@@ -539,7 +398,6 @@ body {
 }
 
 .grafana-panel::before {
-  content: '//';
   position: absolute;
   top: 12px;
   left: -8px;
