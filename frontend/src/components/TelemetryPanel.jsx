@@ -1,7 +1,7 @@
 function TelemetryPanel({ drone }) {
     return (
         <div className="telemetry-panel">
-            <div classname="panel-header">
+            <div className="panel-header">
                 <span>//  TELEMETRY</span>
                 <span>LIVE</span>
             </div>

@@ -1,7 +1,7 @@
 function Map({ drones }) {
     return (
-        <div classname="map-panel">
-            <div classname="panel-header">
+        <div className="map-panel">
+            <div className="panel-header">
                 <span>//  OPERATIONAL MAP</span>
                 <span>LIVE FEED</span>
             </div>

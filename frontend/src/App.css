@@ -1,3 +1,140 @@
+/*:root {*/
+/*  --bg-primary: #0a0f0a;*/
+/*  --bg-secondary: #0d140d;*/
+/*  --border-color: #1a2e1a;*/
+/*  --text-primary: #c8e6c8;*/
+/*  --text-secondary: #6b8f6b;*/
+/*  --text-dim: #3d5a3d;*/
+/*  --accent-green: #00ff66;*/
+/*  --accent-yellow: #ffaa00;*/
+/*  --accent-orange: #ff6600;*/
+/*}*/
+
+/** {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*}*/
+
+/*html, body, #root {*/
+/*  height: 100%;*/
+/*  width: 100%;*/
+/*}*/
+
+/*body {*/
+/*  margin: 0;*/
+/*  background: var(--bg-primary);*/
+/*  font-family: 'Rajdhani', sans-serif;*/
+/*}*/
+
+/*!* Header *!*/
+/*.header {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  align-items: center;*/
+/*  padding: 16px 24px;*/
+/*  background: var(--bg-secondary);*/
+/*  border-bottom: 1px solid var(--border-color);*/
+/*  position: relative;*/
+/*}*/
+
+/*.header::after {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  bottom: -1px;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  height: 1px;*/
+/*  background: linear-gradient(90deg, transparent, var(--accent-green), transparent);*/
+/*  opacity: 0.3;*/
+/*}*/
+
+/*.header-left {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  gap: 16px;*/
+/*}*/
+
+/*.logo {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  gap: 12px;*/
+/*}*/
+
+/*.logo-icon {*/
+/*  width: 36px;*/
+/*  height: 36px;*/
+/*  border: 2px solid var(--accent-green);*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  color: var(--accent-green);*/
+/*  font-size: 18px;*/
+/*}*/
+
+/*.logo-text {*/
+/*  font-family: 'Share Tech Mono', monospace;*/
+/*  font-size: 1.25rem;*/
+/*  letter-spacing: 2px;*/
+/*  color: var(--text-primary);*/
+/*}*/
+
+/*.logo-text span {*/
+/*  color: var(--accent-green);*/
+/*}*/
+
+/*.classification {*/
+/*  font-family: 'Share Tech Mono', monospace;*/
+/*  font-size: 0.7rem;*/
+/*  color: var(--text-dim);*/
+/*  letter-spacing: 3px;*/
+/*  padding: 4px 12px;*/
+/*  border: 1px solid var(--border-color);*/
+/*}*/
+
+/*.header-right {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  gap: 24px;*/
+/*}*/
+
+/*.datetime {*/
+/*  font-family: 'Share Tech Mono', monospace;*/
+/*  font-size: 0.85rem;*/
+/*  color: var(--text-secondary);*/
+/*}*/
+
+/*.status-indicator {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  gap: 8px;*/
+/*  font-family: 'Share Tech Mono', monospace;*/
+/*  font-size: 0.85rem;*/
+/*  color: var(--text-primary);*/
+/*}*/
+
+/*.status-dot {*/
+/*  width: 8px;*/
+/*  height: 8px;*/
+/*  border-radius: 50%;*/
+/*}*/
+
+/*.status-dot.connected {*/
+/*  background: var(--accent-green);*/
+/*  box-shadow: 0 0 10px var(--accent-green);*/
+/*  animation: pulse 2s infinite;*/
+/*}*/
+
+/*.status-dot.disconnected {*/
+/*  background: #ff3344;*/
+/*  box-shadow: 0 0 10px #ff3344;*/
+/*}*/
+
+/*@keyframes pulse {*/
+/*  0%, 100% { opacity: 1; }*/
+/*  50% { opacity: 0.5; }*/
+/*}*/
+
 :root {
   --bg-primary: #0a0f0a;
   --bg-secondary: #0d140d;
@@ -6,6 +143,8 @@
   --text-secondary: #6b8f6b;
   --text-dim: #3d5a3d;
   --accent-green: #00ff66;
+  --accent-yellow: #ffaa00;
+  --accent-orange: #ff6600;
 }
 
 * {
@@ -131,4 +270,366 @@ body {
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
+}
+
+/* Main Layout */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  grid-template-rows: auto 1fr auto;
+  gap: 16px;
+  padding: 16px;
+  height: calc(100vh - 70px);
+}
+
+/* Panel Base Styles */
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+}
+
+.panel-header span:first-child {
+  color: var(--text-dim);
+}
+
+.panel-header span:last-child {
+  color: var(--text-secondary);
+}
+
+/* Map Section */
+.map-panel {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-panel::before {
+  content: '//';
+  position: absolute;
+  top: 12px;
+  left: -8px;
+  color: var(--text-dim);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+}
+
+.map-container {
+  flex: 1;
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Corner brackets for map */
+.map-container::before,
+.map-container::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-color);
+  z-index: 10;
+}
+
+.map-container::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.map-container::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+/* Live Feed Section */
+.live-feed-panel {
+  grid-column: 1;
+  grid-row: 1;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  max-height: 120px;
+  position: relative;
+}
+
+.live-feed-panel::before {
+  content: '//';
+  position: absolute;
+  top: 12px;
+  left: -8px;
+  color: var(--text-dim);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+}
+
+.live-feed-container {
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+}
+
+/* Drone Selector */
+.drone-selector-panel {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.drone-selector-panel::before {
+  content: '//';
+  position: absolute;
+  top: 12px;
+  right: calc(100% + 4px);
+  color: var(--text-dim);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+}
+
+.drone-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.drone-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  margin-bottom: 8px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.drone-item:hover {
+  border-color: var(--accent-green);
+  background: rgba(0, 255, 102, 0.05);
+}
+
+.drone-item.selected {
+  border-color: var(--accent-green);
+  background: rgba(0, 255, 102, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
+}
+
+.drone-name {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.drone-status {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  padding: 4px 8px;
+  border: 1px solid;
+}
+
+.drone-status.on-mission {
+  color: var(--accent-green);
+  border-color: var(--accent-green);
+}
+
+.drone-status.low-battery {
+  color: var(--accent-orange);
+  border-color: var(--accent-orange);
+}
+
+.drone-status.returning {
+  color: var(--accent-green);
+  border-color: var(--accent-green);
+}
+
+/* Telemetry Panel */
+.telemetry-panel {
+  grid-column: 2;
+  grid-row: 3;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.telemetry-panel::before {
+  content: '//';
+  position: absolute;
+  top: 12px;
+  right: calc(100% + 4px);
+  color: var(--text-dim);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+}
+
+.telemetry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px;
+}
+
+.telemetry-item {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+}
+
+.telemetry-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.telemetry-value {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.5rem;
+  color: var(--accent-green);
+  letter-spacing: 1px;
+}
+
+.telemetry-unit {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-left: 4px;
+}
+
+.telemetry-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.coordinates {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+/* Grafana/Analytics Panel */
+.grafana-panel {
+  grid-column: 1;
+  grid-row: 3;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 200px;
+}
+
+.grafana-panel::before {
+  content: '//';
+  position: absolute;
+  top: 12px;
+  left: -8px;
+  color: var(--text-dim);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+}
+
+.grafana-container {
+  flex: 1;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.metric-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.metric-value {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 2.5rem;
+  color: var(--accent-green);
+  letter-spacing: 1px;
+}
+
+.metric-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-green), transparent);
+  width: 80%;
+}
+
+/* System Status Footer */
+.system-status {
+  display: flex;
+  gap: 24px;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.system-status-item {
+  display: flex;
+  gap: 8px;
+}
+
+.system-status-item span:first-child {
+  color: var(--text-dim);
+}
+
+.system-status-item span:last-child {
+  color: var(--text-primary);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border: 1px solid var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-green);
 }
