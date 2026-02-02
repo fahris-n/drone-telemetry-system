@@ -1,4 +1,4 @@
-function Map({ drones }) {
+function DroneMap({ drones }) {
     return (
         <div className="map-panel">
             <div className="panel-header">
@@ -12,4 +12,4 @@ function Map({ drones }) {
     );
 }
 
-export default Map;
+export default DroneMap;
