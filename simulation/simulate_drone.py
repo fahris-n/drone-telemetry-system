@@ -84,7 +84,6 @@ def main():
     end_time = time.time() + duration_seconds
     sent_count = 0
     start_time = time.time()
-
     while time.time() < end_time:
         for drone in fleet:
             drone.update_self()
@@ -95,13 +94,6 @@ def main():
             if sent_count % 1000 == 0:
                 elapsed = time.time() - start_time
                 logging.info(f"Sent {sent_count} messages in {elapsed:.2f}s ({sent_count/elapsed:.0f} msgs/sec)")
-
-
-            # Checks if the message was sent correctly
-            try:
-                future.get(timeout=5)
-            except Exception as e:
-                print(f"Error sending message: {e}")
 
     logging.info(f"Finished sending {sent_count} messages in {time.time() - start_time:.2f}s")
 
