@@ -85,9 +85,9 @@ def main():
     end_time = time.time() + duration_seconds
     sent_count = 0
     start_time = time.time()
-
     cpu_total = 0
     io_total = 0
+    
     while time.time() < end_time:
         for drone in fleet:
             cpu_start = time.time()
