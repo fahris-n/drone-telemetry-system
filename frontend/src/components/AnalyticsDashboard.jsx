@@ -23,7 +23,7 @@ function AnalyticsDashboard({ telemetry, selectedDrone }) {
             (acc, t) => ({
                 altitude: acc.altitude + (t.altitude || 0),
                 speed: acc.speed + (t.speed || 0),
-                battery: parseFloat((sum.battery / entries.length).toFixed(2)),
+                battery: acc.battery + (t.batteryLevel || t.battery || 0),
             }),
             { altitude: 0, speed: 0, battery: 0 }
         );

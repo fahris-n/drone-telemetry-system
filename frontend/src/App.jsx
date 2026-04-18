@@ -152,7 +152,11 @@ function App() {
         <div className="dashboard">
             <Header connected={connected} />
             <div className="dashboard-container">
-                <DroneMap drones={Object.values(telemetry)} />
+                <DroneMap
+                drones={Object.values(telemetry)}
+                selectedDrone={selectedDrone}
+                onSelect={setSelectedDrone}
+                />
                 <AnalyticsDashboard
                     telemetry={telemetry}
                     selectedDrone={selectedDrone}
