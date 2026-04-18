@@ -25,7 +25,7 @@ class Drone:
         self.id = drone_id
         self.lat = base_lat
         self.lon = base_lon
-        self.altitude = random.uniform(50000, 65000)
+        self.altitude = random.uniform(40000, 65000)
         self.battery = 100.0
         self.speed = random.uniform(350, 400)
         self.status = "ON MISSION"
@@ -34,7 +34,7 @@ class Drone:
         self.lat += random.uniform(-0.0005, 0.0005)
         self.lon += random.uniform(-0.0005, 0.0005)
         self.altitude += random.uniform(-5, 5)
-        self.battery -= random.uniform(0.003, 0.0015)
+        self.battery = max(0, self.battery - random.uniform(0.000003, 0.0000015))
         self.speed += random.uniform(-0.05, 0.05)
 
     def generate_telemetry(self):
