@@ -22,4 +22,7 @@ public class AnalyticsController {
 
     @GetMapping("/ids")
     public List<DroneIdDTO> getAllDroneIds() { return analyticsService.getDistinctDrones(); }
+
+    @GetMapping("/avg-latency")
+    public Double droneDataLatency() { return analyticsService.getAverageLatency(); }
 }

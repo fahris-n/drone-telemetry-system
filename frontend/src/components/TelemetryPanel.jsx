@@ -1,6 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 function TelemetryPanel({ drone }) {
+    const [avgLatency, setAvgLatency] = useState(null);
+
+    // Poll avg latency every 5 seconds
+    useEffect(() => {
+        const fetchLatency = async () => {
+            try {
+                const res = await fetch('http://localhost:8080/api/analytics/avg-latency');
+                if (res.ok) {
+                    const data = await res.json();
+                    setAvgLatency(data);
+                }
+            } catch (e) {
+                console.warn('Failed to fetch latency:', e);
+            }
+        };
+
+        fetchLatency();
+        const interval = setInterval(fetchLatency, 5000);
+
+        return () => clearInterval(interval);
+    }, []);
+
     const altitude = drone ? Math.round(drone.altitude || 0) : '---';
     const speed = drone ? Math.round(drone.speed || 0) : '---';
     const battery = drone ? parseFloat((drone.batteryLevel || drone.battery || 0).toFixed(2)) : '---';
@@ -14,7 +36,6 @@ function TelemetryPanel({ drone }) {
 
     const droneLabel = drone ? drone.droneId || drone.id : 'NONE';
 
-    // Battery color logic
     const batteryColor = drone
         ? battery < 15
             ? 'var(--accent-orange)'
@@ -23,7 +44,6 @@ function TelemetryPanel({ drone }) {
                 : 'var(--accent-green)'
         : 'var(--text-dim)';
 
-    // Status color logic
     const statusColor = drone
         ? status === 'LOW BATTERY'
             ? 'var(--accent-orange)'
@@ -31,6 +51,10 @@ function TelemetryPanel({ drone }) {
                 ? 'var(--accent-yellow)'
                 : 'var(--accent-green)'
         : 'var(--text-dim)';
+
+    const latencyDisplay = avgLatency != null
+        ? `${Math.round(avgLatency)}ms`
+        : '---';
 
     return (
         <div className="telemetry-panel">
@@ -96,8 +120,8 @@ function TelemetryPanel({ drone }) {
                     <span>{drone ? '94%' : '---'}</span>
                 </div>
                 <div className="system-status-item">
-                    <span>LAG:</span>
-                    <span>{drone ? '11ms' : '---'}</span>
+                    <span>AVG LATENCY:</span>
+                    <span>{latencyDisplay}</span>
                 </div>
             </div>
         </div>
