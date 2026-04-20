@@ -14,7 +14,7 @@ A real-time distributed system that ingests drone telemetry data via Kafka, pers
 - **Deployment**: All services run in Docker containers
 
 <p align="center">
-  <img src="docs/architecture.jpeg" alt="System Diagram" width="1200">
+  <img src="docs/drone_telemetry_sim.drawio (1).svg" alt="System Diagram" width="1200">
 </p>
 
 ---
