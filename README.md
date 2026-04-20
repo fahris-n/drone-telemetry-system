@@ -1,24 +1,11 @@
 #  Drone Telemetry System
 
-A real-time distributed system that ingests drone telemetry data via Kafka, persists to PostgreSQL, and streams live updates to a React dashboard over WebSockets.
+A full-stack distributed system that simulates a fleet of reconnaissance drones, ingests high-throughput telemetry via Apache Kafka, processes and persists data through a Java Spring Boot backend with PostgreSQL, and streams live updates to a React dashboard over WebSockets (STOMP/SockJS). Fully containerized with Docker Compose.
 
----
-
-## 📖 Overview
-
-- **Simulation**: Python spawns and simulates multiple drone objects
-- **Streaming**: Each drone writes telemetry (location, altitude, speed, battery, etc.) to a Kafka topic
-- **Persistence**: Spring Boot consumes from Kafka and stores telemetry in PostgreSQL
-- **Real-time**: WebSocket broadcasting pushes live updates to connected clients
-- **Frontend**: React dashboard displays real-time telemetry and historical data via REST
-- **Deployment**: All services run in Docker containers
-
+## 📖 Architecture
 <p align="center">
   <img src="docs/drone_telemetry_sim.drawio (1).svg" alt="System Diagram" width="1200">
 </p>
-
----
-
 
 ## ⚙️ Tech Stack
 
@@ -33,15 +20,12 @@ A real-time distributed system that ingests drone telemetry data via Kafka, pers
 - `Docker`
 
 
----
-
 ## 📊 Performance
 
-- **2,700+** messages/second throughput
-- **11ms** average latency
+- **25,000+** messages/second throughput
+- **20 to 30** average latency
 - **5** containerized services
 
----
 
 ## 🎯 Purpose
 
@@ -49,3 +33,4 @@ A real-time distributed system that ingests drone telemetry data via Kafka, pers
 - Gain hands-on experience with containerization and service orchestration
 - Build a full-stack distributed system from simulation to visualization
 
+## 🍿 Demo
