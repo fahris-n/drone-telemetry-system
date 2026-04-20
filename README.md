@@ -34,3 +34,6 @@ A full-stack distributed system that simulates a fleet of reconnaissance drones,
 - Build a full-stack distributed system from simulation to visualization
 
 ## 🍿 Demo
+
+[![Demo Video](https://img.youtube.com/vi/R61GLLwc1SQ/maxresdefault.jpg)](https://youtu.be/R61GLLwc1SQ)
+*▶ Click the image above to watch the full demo*
