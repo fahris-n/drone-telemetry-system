@@ -23,7 +23,7 @@ A full-stack distributed system that simulates a fleet of reconnaissance drones,
 ## 📊 Performance
 
 - **25,000+** messages/second throughput
-- **20 to 30** average latency
+- **20 to 30** average latency (ms)
 - **5** containerized services
 
 
