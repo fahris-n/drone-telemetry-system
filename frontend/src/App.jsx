@@ -1,70 +1,91 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Header from './components/Header.jsx';
 import { Client } from '@stomp/stompjs';
 import SockJS from 'sockjs-client';
 
 import './App.css';
-import GrafanaEmbed from "./components/GrafanaEmbed.jsx";
+import AnalyticsDashboard from "./components/AnalyticsDashboard.jsx";
 import DroneSelector from "./components/DroneSelector.jsx";
 import TelemetryPanel from "./components/TelemetryPanel.jsx";
 import DroneMap from "./components/DroneMap.jsx";
 
+const normalizeId = (id) => String(id);
+
 function App() {
     const [connected, setConnected] = useState(false);
-    const [telemetry, setTelemetry] = useState({});  // Stores live telemetry data by droneId
-    const [drones, setDrones] = useState([]);  // List of drones for the selector
+    const [backendReady, setBackendReady] = useState(false);
+    const [telemetry, setTelemetry] = useState({});
+    const [drones, setDrones] = useState([]);
     const [selectedDrone, setSelectedDrone] = useState(null);
+    const clientRef = useRef(null);
 
-    // 1. Fetch initial list of drone IDs from the API when component mounts
+    // 1. Poll for backend readiness, then fetch drones + connect WebSocket
     useEffect(() => {
-        const fetchDrones = async () => {
-            try {
-                const response = await fetch('http://localhost:8080/api/analytics/ids');
-                const data = await response.json();
-
-                // Transform the DTO to match our component format
-                const initialDrones = data.map(dto => ({
-                    id: dto.droneID,
-                    name: `${String(dto.droneID).padStart(3, '0')}`,
-                    status: 'WAITING'  // Initial status until WebSocket data arrives
-                }));
-
-                setDrones(initialDrones);
-            } catch (error) {
-                console.error('Error fetching drones:', error);
+        let cancelled = false;
+        const waitForBackend = async () => {
+            console.log('Waiting for backend...');
+            while (!cancelled) {
+                try {
+                    const res = await fetch('http://localhost:8080/api/analytics/ids');
+                    if (res.ok) {
+                        const data = await res.json();
+    
+                        if (data.length === 0) {
+                            console.log('Backend is up but no drones yet, retrying in 2s...');
+                            await new Promise(r => setTimeout(r, 2000));
+                            continue;
+                        }
+    
+                        console.log('Backend is ready, fetched drone IDs:', data);
+                        const initialDrones = data.map(dto => ({
+                            id: normalizeId(dto.droneID),
+                            name: dto.droneID,
+                            status: 'WAITING',
+                        }));
+    
+                        if (!cancelled) {
+                            setDrones(initialDrones);
+                            setBackendReady(true);
+                        }
+                        return;
+                    }
+                } catch (e) {
+                    console.log('Backend not ready yet, retrying in 2s...');
+                }
+                await new Promise(r => setTimeout(r, 2000));
             }
         };
-
-        fetchDrones();
+        waitForBackend();
+        return () => {
+            cancelled = true;
+        };
     }, []);
 
-    // 2. Connect to WebSocket and listen for live telemetry updates
+    // 2. Once backend is ready, connect WebSocket
     useEffect(() => {
+        if (!backendReady) return;
+
         const client = new Client({
             webSocketFactory: () => new SockJS('http://localhost:8080/ws'),
             onConnect: () => {
+                console.log('WebSocket connected');
                 setConnected(true);
 
                 client.subscribe('/topic/dronetelemetry', (message) => {
                     const data = JSON.parse(message.body);
-                    console.log('Telemetry received:', data);
 
-                    // Check if data is an array
                     if (Array.isArray(data)) {
-                        // Process each telemetry item in the array
                         data.forEach(telemetryItem => {
                             if (!telemetryItem.droneId) {
                                 console.warn('Telemetry item missing droneId:', telemetryItem);
                                 return;
                             }
 
-                            // Store telemetry data
                             setTelemetry(prev => ({
                                 ...prev,
-                                [telemetryItem.droneId]: telemetryItem
+                                [telemetryItem.droneId]: telemetryItem,
                             }));
 
-                            // Update drone status
                             setDrones(prevDrones => {
                                 const droneIndex = prevDrones.findIndex(d => d.id === telemetryItem.droneId);
 
@@ -72,14 +93,14 @@ function App() {
                                     const updatedDrones = [...prevDrones];
                                     updatedDrones[droneIndex] = {
                                         ...updatedDrones[droneIndex],
-                                        status: telemetryItem.status
+                                        status: telemetryItem.status,
                                     };
                                     return updatedDrones;
                                 }
+                                return prevDrones;
                             });
                         });
                     } else {
-                        // Single telemetry object (old code path)
                         if (!data.droneId) {
                             console.warn('Received telemetry without droneId:', data);
                             return;
@@ -87,7 +108,7 @@ function App() {
 
                         setTelemetry(prev => ({
                             ...prev,
-                            [data.droneId]: data
+                            [data.droneId]: data,
                         }));
 
                         setDrones(prevDrones => {
@@ -97,37 +118,54 @@ function App() {
                                 const updatedDrones = [...prevDrones];
                                 updatedDrones[droneIndex] = {
                                     ...updatedDrones[droneIndex],
-                                    status: data.status || 'ON MISSION'
+                                    status: data.status || 'ON MISSION',
                                 };
                                 return updatedDrones;
                             } else {
                                 return [...prevDrones, {
                                     id: data.droneId,
                                     name: data.name || data.droneId,
-                                    status: data.status || 'ON MISSION'
+                                    status: data.status || 'ON MISSION',
                                 }];
                             }
                         });
                     }
                 });
             },
-            onDisconnect: () => setConnected(false),
-            reconnectDelay: 5000,
+            onDisconnect: () => {
+                console.log('WebSocket disconnected');
+                setConnected(false);
+            },
+            onStompError: (frame) => {
+                console.error('STOMP error:', frame.headers['message']);
+            },
+            onWebSocketError: (event) => {
+                console.error('WebSocket error:', event);
+            },
+            reconnectDelay: 3000,
         });
 
+        clientRef.current = client;
         client.activate();
 
         return () => {
             client.deactivate();
         };
-    }, []);
+    }, [backendReady]);
 
     return (
         <div className="dashboard">
             <Header connected={connected} />
             <div className="dashboard-container">
-                <DroneMap drones={Object.values(telemetry)} />
-                <GrafanaEmbed />
+                <DroneMap
+                drones={Object.values(telemetry)}
+                selectedDrone={selectedDrone}
+                onSelect={setSelectedDrone}
+                />
+                <AnalyticsDashboard
+                    telemetry={telemetry}
+                    selectedDrone={selectedDrone}
+                />
                 <DroneSelector
                     drones={drones}
                     selectedDrone={selectedDrone}

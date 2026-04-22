@@ -21,4 +21,8 @@ public class AnalyticsService {
                .map(id -> new DroneIdDTO(id))
                .collect(Collectors.toList());
    }
+
+   public Double getAverageLatency() {
+      return analyticsRepository.getAverateLatencyMs();
+   }
 }
