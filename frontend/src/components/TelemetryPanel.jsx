@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 function TelemetryPanel({ drone }) {
     const [avgLatency, setAvgLatency] = useState(null);
 
-    // Poll avg latency every 5 seconds
     useEffect(() => {
         const fetchLatency = async () => {
             try {
@@ -111,14 +110,6 @@ function TelemetryPanel({ drone }) {
             </div>
 
             <div className="system-status">
-                <div className="system-status-item">
-                    <span>UPLINK:</span>
-                    <span>{drone ? 'STABLE' : '---'}</span>
-                </div>
-                <div className="system-status-item">
-                    <span>SIGNAL:</span>
-                    <span>{drone ? '94%' : '---'}</span>
-                </div>
                 <div className="system-status-item">
                     <span>AVG LATENCY:</span>
                     <span>{latencyDisplay}</span>

@@ -9,6 +9,8 @@ import DroneSelector from "./components/DroneSelector.jsx";
 import TelemetryPanel from "./components/TelemetryPanel.jsx";
 import DroneMap from "./components/DroneMap.jsx";
 
+const normalizeId = (id) => String(id);
+
 function App() {
     const [connected, setConnected] = useState(false);
     const [backendReady, setBackendReady] = useState(false);
@@ -20,7 +22,6 @@ function App() {
     // 1. Poll for backend readiness, then fetch drones + connect WebSocket
     useEffect(() => {
         let cancelled = false;
-
         const waitForBackend = async () => {
             console.log('Waiting for backend...');
             while (!cancelled) {
@@ -28,14 +29,20 @@ function App() {
                     const res = await fetch('http://localhost:8080/api/analytics/ids');
                     if (res.ok) {
                         const data = await res.json();
+    
+                        if (data.length === 0) {
+                            console.log('Backend is up but no drones yet, retrying in 2s...');
+                            await new Promise(r => setTimeout(r, 2000));
+                            continue;
+                        }
+    
                         console.log('Backend is ready, fetched drone IDs:', data);
-
                         const initialDrones = data.map(dto => ({
-                            id: dto.droneID,
-                            name: `${String(dto.droneID).padStart(3, '0')}`,
+                            id: normalizeId(dto.droneID),
+                            name: dto.droneID,
                             status: 'WAITING',
                         }));
-
+    
                         if (!cancelled) {
                             setDrones(initialDrones);
                             setBackendReady(true);
@@ -47,10 +54,8 @@ function App() {
                 }
                 await new Promise(r => setTimeout(r, 2000));
             }
-        }; 
-
+        };
         waitForBackend();
-
         return () => {
             cancelled = true;
         };

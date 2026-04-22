@@ -81,7 +81,7 @@ def main():
                 exit(1)
 
     # Send messages to topic
-    duration_seconds = 60
+    duration_seconds = 120
     end_time = time.time() + duration_seconds
     sent_count = 0
     start_time = time.time()
