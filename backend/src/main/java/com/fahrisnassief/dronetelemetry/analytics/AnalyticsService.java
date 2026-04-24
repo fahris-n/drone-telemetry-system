@@ -23,6 +23,6 @@ public class AnalyticsService {
    }
 
    public Double getAverageLatency() {
-      return analyticsRepository.getAverateLatencyMs();
+      return analyticsRepository.getAverageLatencyMs();
    }
 }
