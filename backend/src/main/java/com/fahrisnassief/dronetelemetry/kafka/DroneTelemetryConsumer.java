@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class DroneTelemetryConsumer {
@@ -16,7 +17,9 @@ public class DroneTelemetryConsumer {
     private final SimpMessagingTemplate messagingTemplate;
     private Instant lastBroadcast = Instant.now();
 
-    public DroneTelemetryConsumer(DroneTelemetryRepository droneTelemetryRepository, SimpMessagingTemplate messagingTemplate) {
+    public DroneTelemetryConsumer(
+            DroneTelemetryRepository droneTelemetryRepository,
+            SimpMessagingTemplate messagingTemplate) {
         this.droneTelemetryRepository = droneTelemetryRepository;
         this.messagingTemplate = messagingTemplate;
     }
@@ -26,14 +29,22 @@ public class DroneTelemetryConsumer {
             groupId = "postgres-reader",
             containerFactory = "postgresListenerContainerFactory"
     )
-    public void consume(List<DroneTelemetry> droneTelemetryBatch) {
-        // store data
-        droneTelemetryRepository.saveAll(droneTelemetryBatch);
 
-        // broadcast to subscribed clients
+    public void consume(List<DroneTelemetry> droneTelemetryBatch) {
+        List<DroneTelemetry> valid = droneTelemetryBatch.stream()
+                .filter(Objects::nonNull)
+                .toList();
+
+        if (valid.isEmpty()) {
+            return;
+        }
+
+        droneTelemetryRepository.saveAll(valid);
+
         if (Duration.between(lastBroadcast, Instant.now()).toMillis() > 100) {
-            messagingTemplate.convertAndSend("/topic/dronetelemetry", droneTelemetryBatch);
+            messagingTemplate.convertAndSend("/topic/dronetelemetry", valid);
             lastBroadcast = Instant.now();
         }
     }
+
 }

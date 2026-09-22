@@ -54,6 +54,9 @@ services:
       - kafka
     networks:
       - app
+    environment:
+      - SIMULATION_MODE=BENCHMARK
+      - DURATION_SECONDS=120
 
   # SpringBoot backend
   backend:
